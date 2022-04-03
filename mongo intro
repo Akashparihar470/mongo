@@ -1,0 +1,21 @@
+
+1. use data //create a database 
+
+2.db.createCollection('users')
+
+3.db.users.insert({""}) //single value
+
+
+4.db.users.insertMany([{},{}]) //multiple values
+
+5.db.users.find({}).pretty() // checking overall collections
+
+6.db.users.findOne({})   // finding one ; 
+
+7.db.users.update({} , {$ : {}})  // update one ,
+ 
+8.db.users.updateMany({} , {$ : {}}) ,
+
+9.db.users.remove({}),
+
+10.db.dropDatabase(), //deleting datbase
