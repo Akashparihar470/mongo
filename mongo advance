@@ -1,0 +1,1252 @@
+
+> use web_15
+switched to db web_15
+> show collections
+Web_15
+movie
+users
+> db.movie.find({movie_name:{$eq:"movie_name"}})
+> db.movie.find({movie_name:{$ne:"movie_name"}})
+{ "_id" : ObjectId("6228daeab035f886530f1b50"), "movie_name" : "Urbanized", "movie_genre" : "Documentary", "production_year" : 1992, "budget" : 19731 }
+{ "_id" : ObjectId("6228daeab035f886530f1b51"), "movie_name" : "Guerrilla: The Taking of Patty Hearst", "movie_genre" : "Documentary", "production_year" : 2018, "budget" : 15226 }
+{ "_id" : ObjectId("6228daeab035f886530f1b52"), "movie_name" : "Glorious Technicolor", "movie_genre" : "Documentary", "production_year" : 2012, "budget" : 19950 }
+{ "_id" : ObjectId("6228daeab035f886530f1b53"), "movie_name" : "Trip, The", "movie_genre" : "Comedy|Drama|Romance", "production_year" : 2004, "budget" : 9351 }
+{ "_id" : ObjectId("6228daeab035f886530f1b54"), "movie_name" : "Detropia", "movie_genre" : "Documentary", "production_year" : 2018, "budget" : 19680 }
+{ "_id" : ObjectId("6228daeab035f886530f1b55"), "movie_name" : "Machine Girl, The (Kataude mashin gâru)", "movie_genre" : "Action|Comedy|Fantasy|Horror|Thriller", "production_year" : 2006, "budget" : 10444 }
+{ "_id" : ObjectId("6228daeab035f886530f1b56"), "movie_name" : "Besieged (a.k.a. L' Assedio)", "movie_genre" : "Drama", "production_year" : 1992, "budget" : 9449 }
+{ "_id" : ObjectId("6228daeab035f886530f1b57"), "movie_name" : "Clown", "movie_genre" : "Drama|Horror", "production_year" : 2010, "budget" : 14356 }
+{ "_id" : ObjectId("6228daeab035f886530f1b58"), "movie_name" : "Turandot Project, The", "movie_genre" : "Documentary", "production_year" : 2017, "budget" : 14765 }
+{ "_id" : ObjectId("6228daeab035f886530f1b59"), "movie_name" : "Tough Enough (Knallhart)", "movie_genre" : "Crime|Drama", "production_year" : 1995, "budget" : 11144 }
+{ "_id" : ObjectId("6228daeab035f886530f1b5a"), "movie_name" : "8 Million Ways to Die", "movie_genre" : "Action|Adventure|Crime|Thriller", "production_year" : 2020, "budget" : 10029 }
+{ "_id" : ObjectId("6228daeab035f886530f1b5b"), "movie_name" : "Harmagedon", "movie_genre" : "Action|Drama", "production_year" : 1990, "budget" : 16633 }
+{ "_id" : ObjectId("6228daeab035f886530f1b5c"), "movie_name" : "Welcome to Australia", "movie_genre" : "Documentary", "production_year" : 1990, "budget" : 19039 }
+{ "_id" : ObjectId("6228daeab035f886530f1b5d"), "movie_name" : "What Have They Done to Your Daughters?", "movie_genre" : "Mystery|Romance|Thriller", "production_year" : 2014, "budget" : 13737 }
+{ "_id" : ObjectId("6228daeab035f886530f1b5e"), "movie_name" : "Canyon, The", "movie_genre" : "Thriller", "production_year" : 1991, "budget" : 18917 }
+{ "_id" : ObjectId("6228daeab035f886530f1b5f"), "movie_name" : "Finder's Fee", "movie_genre" : "Drama|Thriller", "production_year" : 2014, "budget" : 13547 }
+{ "_id" : ObjectId("6228daeab035f886530f1b60"), "movie_name" : "Beerfest", "movie_genre" : "Comedy", "production_year" : 2012, "budget" : 11067 }
+{ "_id" : ObjectId("6228daeab035f886530f1b61"), "movie_name" : "Upperworld", "movie_genre" : "Drama", "production_year" : 2002, "budget" : 13506 }
+{ "_id" : ObjectId("6228daeab035f886530f1b62"), "movie_name" : "What Richard Did", "movie_genre" : "Drama", "production_year" : 2012, "budget" : 10405 }
+{ "_id" : ObjectId("6228daeab035f886530f1b63"), "movie_name" : "Losers, The", "movie_genre" : "Action|Adventure|Drama|Mystery|Thriller", "production_year" : 1999, "budget" : 14055 }
+Type "it" for more
+> db.movie.find({budget:{$eq:"15000"}})
+> db.movie.find({budget:{$eq:15000}})
+> db.movie.find({"budget":{$eq:15000}})
+> db.movie.find({budget:{$gte:15000}}).pretty()
+{
+        "_id" : ObjectId("6228daeab035f886530f1b50"),
+        "movie_name" : "Urbanized",
+        "movie_genre" : "Documentary",
+        "production_year" : 1992,
+        "budget" : 19731
+}
+{
+        "_id" : ObjectId("6228daeab035f886530f1b51"),
+        "movie_name" : "Guerrilla: The Taking of Patty Hearst",
+        "movie_genre" : "Documentary",
+        "production_year" : 2018,
+        "budget" : 15226
+}
+{
+        "_id" : ObjectId("6228daeab035f886530f1b52"),
+        "movie_name" : "Glorious Technicolor",
+        "movie_genre" : "Documentary",
+        "production_year" : 2012,
+        "budget" : 19950
+}
+{
+        "_id" : ObjectId("6228daeab035f886530f1b54"),
+        "movie_name" : "Detropia",
+        "movie_genre" : "Documentary",
+        "production_year" : 2018,
+        "budget" : 19680
+}
+{
+        "_id" : ObjectId("6228daeab035f886530f1b5b"),
+        "movie_name" : "Harmagedon",
+        "movie_genre" : "Action|Drama",
+        "production_year" : 1990,
+        "budget" : 16633
+}
+{
+        "_id" : ObjectId("6228daeab035f886530f1b5c"),
+        "movie_name" : "Welcome to Australia",
+        "movie_genre" : "Documentary",
+        "production_year" : 1990,
+        "budget" : 19039
+}
+{
+        "_id" : ObjectId("6228daeab035f886530f1b5e"),
+        "movie_name" : "Canyon, The",
+        "movie_genre" : "Thriller",
+        "production_year" : 1991,
+        "budget" : 18917
+}
+{
+        "_id" : ObjectId("6228daeab035f886530f1b64"),
+        "movie_name" : "The Dust Bowl",
+        "movie_genre" : "Documentary",
+        "production_year" : 1993,
+        "budget" : 17543
+}
+{
+        "_id" : ObjectId("6228daeab035f886530f1b65"),
+        "movie_name" : "Boomerang",
+        "movie_genre" : "Comedy|Romance",
+        "production_year" : 1991,
+        "budget" : 15938
+}
+{
+        "_id" : ObjectId("6228daeab035f886530f1b66"),
+        "movie_name" : "Lives of a Bengal Lancer, The",
+        "movie_genre" : "Adventure|Drama",
+        "production_year" : 2012,
+        "budget" : 19197
+}
+{
+        "_id" : ObjectId("6228daeab035f886530f1b68"),
+        "movie_name" : "Patriot Games",
+        "movie_genre" : "Action|Thriller",
+        "production_year" : 2020,
+        "budget" : 15846
+}
+{
+        "_id" : ObjectId("6228daeab035f886530f1b6a"),
+        "movie_name" : "Disfigured",
+        "movie_genre" : "Drama",
+        "production_year" : 2020,
+        "budget" : 19274
+}
+{
+        "_id" : ObjectId("6228daeab035f886530f1b6b"),
+        "movie_name" : "Last Song, The",
+        "movie_genre" : "Drama|Romance",
+        "production_year" : 1992,
+        "budget" : 19180
+}
+{
+        "_id" : ObjectId("6228daeab035f886530f1b6c"),
+        "movie_name" : "Mephisto",
+        "movie_genre" : "Drama|War",
+        "production_year" : 2019,
+        "budget" : 18803
+}
+{
+        "_id" : ObjectId("6228daeab035f886530f1b6f"),
+        "movie_name" : "Gray Lady Down",
+        "movie_genre" : "Drama|Thriller",
+        "production_year" : 1990,
+        "budget" : 17166
+}
+{
+        "_id" : ObjectId("6228daeab035f886530f1b70"),
+        "movie_name" : "Case départ",
+        "movie_genre" : "Comedy",
+        "production_year" : 2018,
+        "budget" : 16768
+}
+{
+        "_id" : ObjectId("6228daeab035f886530f1b72"),
+        "movie_name" : "Ballistic: Ecks vs. Sever",
+        "movie_genre" : "Action|Thriller",
+        "production_year" : 1995,
+        "budget" : 18630
+}
+{
+        "_id" : ObjectId("6228daeab035f886530f1b73"),
+        "movie_name" : "Life Aquatic with Steve Zissou, The",
+        "movie_genre" : "Adventure|Comedy|Fantasy",
+        "production_year" : 1994,
+        "budget" : 15703
+}
+{
+        "_id" : ObjectId("6228daeab035f886530f1b75"),
+        "movie_name" : "Driven to Kill",
+        "movie_genre" : "Action|Crime|Thriller",
+        "production_year" : 1995,
+        "budget" : 15555
+}
+{
+        "_id" : ObjectId("6228daeab035f886530f1b77"),
+        "movie_name" : "Eye for an Eye, An",
+        "movie_genre" : "Action|Crime|Thriller",
+        "production_year" : 2008,
+        "budget" : 15948
+}
+Type "it" for more
+> db.movie.find({budget:{$lte:15000}}).pretty()
+{
+        "_id" : ObjectId("6228daeab035f886530f1b53"),
+        "movie_name" : "Trip, The",
+        "movie_genre" : "Comedy|Drama|Romance",
+        "production_year" : 2004,
+        "budget" : 9351
+}
+{
+        "_id" : ObjectId("6228daeab035f886530f1b55"),
+        "movie_name" : "Machine Girl, The (Kataude mashin gâru)",
+        "movie_genre" : "Action|Comedy|Fantasy|Horror|Thriller",
+        "production_year" : 2006,
+        "budget" : 10444
+}
+{
+        "_id" : ObjectId("6228daeab035f886530f1b56"),
+        "movie_name" : "Besieged (a.k.a. L' Assedio)",
+        "movie_genre" : "Drama",
+        "production_year" : 1992,
+        "budget" : 9449
+}
+{
+        "_id" : ObjectId("6228daeab035f886530f1b57"),
+        "movie_name" : "Clown",
+        "movie_genre" : "Drama|Horror",
+        "production_year" : 2010,
+        "budget" : 14356
+}
+{
+        "_id" : ObjectId("6228daeab035f886530f1b58"),
+        "movie_name" : "Turandot Project, The",
+        "movie_genre" : "Documentary",
+        "production_year" : 2017,
+        "budget" : 14765
+}
+{
+        "_id" : ObjectId("6228daeab035f886530f1b59"),
+        "movie_name" : "Tough Enough (Knallhart)",
+        "movie_genre" : "Crime|Drama",
+        "production_year" : 1995,
+        "budget" : 11144
+}
+{
+        "_id" : ObjectId("6228daeab035f886530f1b5a"),
+        "movie_name" : "8 Million Ways to Die",
+        "movie_genre" : "Action|Adventure|Crime|Thriller",
+        "production_year" : 2020,
+        "budget" : 10029
+}
+{
+        "_id" : ObjectId("6228daeab035f886530f1b5d"),
+        "movie_name" : "What Have They Done to Your Daughters?",
+        "movie_genre" : "Mystery|Romance|Thriller",
+        "production_year" : 2014,
+        "budget" : 13737
+}
+{
+        "_id" : ObjectId("6228daeab035f886530f1b5f"),
+        "movie_name" : "Finder's Fee",
+        "movie_genre" : "Drama|Thriller",
+        "production_year" : 2014,
+        "budget" : 13547
+}
+{
+        "_id" : ObjectId("6228daeab035f886530f1b60"),
+        "movie_name" : "Beerfest",
+        "movie_genre" : "Comedy",
+        "production_year" : 2012,
+        "budget" : 11067
+}
+{
+        "_id" : ObjectId("6228daeab035f886530f1b61"),
+        "movie_name" : "Upperworld",
+        "movie_genre" : "Drama",
+        "production_year" : 2002,
+        "budget" : 13506
+}
+{
+        "_id" : ObjectId("6228daeab035f886530f1b62"),
+        "movie_name" : "What Richard Did",
+        "movie_genre" : "Drama",
+        "production_year" : 2012,
+        "budget" : 10405
+}
+{
+        "_id" : ObjectId("6228daeab035f886530f1b63"),
+        "movie_name" : "Losers, The",
+        "movie_genre" : "Action|Adventure|Drama|Mystery|Thriller",
+        "production_year" : 1999,
+        "budget" : 14055
+}
+{
+        "_id" : ObjectId("6228daeab035f886530f1b67"),
+        "movie_name" : "LennoNYC",
+        "movie_genre" : "Documentary",
+        "production_year" : 2009,
+        "budget" : 14465
+}
+{
+        "_id" : ObjectId("6228daeab035f886530f1b69"),
+        "movie_name" : "To Mars by A-Bomb: The Secret History of Project Orion",
+        "movie_genre" : "Documentary",
+        "production_year" : 2013,
+        "budget" : 9086
+}
+{
+        "_id" : ObjectId("6228daeab035f886530f1b6d"),
+        "movie_name" : "Taming of the Shrew, The",
+        "movie_genre" : "Comedy",
+        "production_year" : 2018,
+        "budget" : 9285
+}
+{
+        "_id" : ObjectId("6228daeab035f886530f1b6e"),
+        "movie_name" : "Battle for Marjah, The",
+        "movie_genre" : "Documentary|War",
+        "production_year" : 1991,
+        "budget" : 13455
+}
+{
+        "_id" : ObjectId("6228daeab035f886530f1b71"),
+        "movie_name" : "Hell Is for Heroes",
+        "movie_genre" : "Drama|War",
+        "production_year" : 2007,
+        "budget" : 10174
+}
+{
+        "_id" : ObjectId("6228daeab035f886530f1b74"),
+        "movie_name" : "Return to the 36th Chamber (Shao Lin da peng da shi) ",
+        "movie_genre" : "Action|Comedy",
+        "production_year" : 1990,
+        "budget" : 9945
+}
+{
+        "_id" : ObjectId("6228daeab035f886530f1b76"),
+        "movie_name" : "Tomorrow at Dawn (Demain dès l'aube)",
+        "movie_genre" : "Drama",
+        "production_year" : 1996,
+        "budget" : 13357
+}
+Type "it" for more
+> db.movie.find([{budget:{$gt:10000}},{production_year:{$gt:2000}}]).pretty()
+Error: error: {
+        "ok" : 0,
+        "errmsg" : "Expected field filterto be of type object",
+        "code" : 14,
+        "codeName" : "TypeMismatch"
+}
+> db.movie.find([{"budget":{$gt:10000}},{"production_year":{$gt:2000}}]).pretty()
+Error: error: {
+        "ok" : 0,
+        "errmsg" : "Expected field filterto be of type object",
+        "code" : 14,
+        "codeName" : "TypeMismatch"
+}
+> db.movie.findMany([{"budget":{$gt:10000}},{"production_year":{$gt:2000}}]).pretty()
+uncaught exception: TypeError: db.movie.findMany is not a function :
+@(shell):1:1
+> db.movie.findMany({"budget":{$gt:10000}},{"production_year":{$gt:2000}}).pretty()
+uncaught exception: TypeError: db.movie.findMany is not a function :
+@(shell):1:1
+> db.movie.find({"moive_name":{$ne:"movie_name"}})
+{ "_id" : ObjectId("6228daeab035f886530f1b50"), "movie_name" : "Urbanized", "movie_genre" : "Documentary", "production_year" : 1992, "budget" : 19731 }
+{ "_id" : ObjectId("6228daeab035f886530f1b51"), "movie_name" : "Guerrilla: The Taking of Patty Hearst", "movie_genre" : "Documentary", "production_year" : 2018, "budget" : 15226 }
+{ "_id" : ObjectId("6228daeab035f886530f1b52"), "movie_name" : "Glorious Technicolor", "movie_genre" : "Documentary", "production_year" : 2012, "budget" : 19950 }
+{ "_id" : ObjectId("6228daeab035f886530f1b53"), "movie_name" : "Trip, The", "movie_genre" : "Comedy|Drama|Romance", "production_year" : 2004, "budget" : 9351 }
+{ "_id" : ObjectId("6228daeab035f886530f1b54"), "movie_name" : "Detropia", "movie_genre" : "Documentary", "production_year" : 2018, "budget" : 19680 }
+{ "_id" : ObjectId("6228daeab035f886530f1b55"), "movie_name" : "Machine Girl, The (Kataude mashin gâru)", "movie_genre" : "Action|Comedy|Fantasy|Horror|Thriller", "production_year" : 2006, "budget" : 10444 }
+{ "_id" : ObjectId("6228daeab035f886530f1b56"), "movie_name" : "Besieged (a.k.a. L' Assedio)", "movie_genre" : "Drama", "production_year" : 1992, "budget" : 9449 }
+{ "_id" : ObjectId("6228daeab035f886530f1b57"), "movie_name" : "Clown", "movie_genre" : "Drama|Horror", "production_year" : 2010, "budget" : 14356 }
+{ "_id" : ObjectId("6228daeab035f886530f1b58"), "movie_name" : "Turandot Project, The", "movie_genre" : "Documentary", "production_year" : 2017, "budget" : 14765 }
+{ "_id" : ObjectId("6228daeab035f886530f1b59"), "movie_name" : "Tough Enough (Knallhart)", "movie_genre" : "Crime|Drama", "production_year" : 1995, "budget" : 11144 }
+{ "_id" : ObjectId("6228daeab035f886530f1b5a"), "movie_name" : "8 Million Ways to Die", "movie_genre" : "Action|Adventure|Crime|Thriller", "production_year" : 2020, "budget" : 10029 }
+{ "_id" : ObjectId("6228daeab035f886530f1b5b"), "movie_name" : "Harmagedon", "movie_genre" : "Action|Drama", "production_year" : 1990, "budget" : 16633 }
+{ "_id" : ObjectId("6228daeab035f886530f1b5c"), "movie_name" : "Welcome to Australia", "movie_genre" : "Documentary", "production_year" : 1990, "budget" : 19039 }
+{ "_id" : ObjectId("6228daeab035f886530f1b5d"), "movie_name" : "What Have They Done to Your Daughters?", "movie_genre" : "Mystery|Romance|Thriller", "production_year" : 2014, "budget" : 13737 }
+{ "_id" : ObjectId("6228daeab035f886530f1b5e"), "movie_name" : "Canyon, The", "movie_genre" : "Thriller", "production_year" : 1991, "budget" : 18917 }
+{ "_id" : ObjectId("6228daeab035f886530f1b5f"), "movie_name" : "Finder's Fee", "movie_genre" : "Drama|Thriller", "production_year" : 2014, "budget" : 13547 }
+{ "_id" : ObjectId("6228daeab035f886530f1b60"), "movie_name" : "Beerfest", "movie_genre" : "Comedy", "production_year" : 2012, "budget" : 11067 }
+{ "_id" : ObjectId("6228daeab035f886530f1b61"), "movie_name" : "Upperworld", "movie_genre" : "Drama", "production_year" : 2002, "budget" : 13506 }
+{ "_id" : ObjectId("6228daeab035f886530f1b62"), "movie_name" : "What Richard Did", "movie_genre" : "Drama", "production_year" : 2012, "budget" : 10405 }
+{ "_id" : ObjectId("6228daeab035f886530f1b63"), "movie_name" : "Losers, The", "movie_genre" : "Action|Adventure|Drama|Mystery|Thriller", "production_year" : 1999, "budget" : 14055 }
+Type "it" for more
+> db.movie.find({$end:[{"budget":{$gt:10000}},{"production_year":{$gt:2000}}]})
+Error: error: {
+        "ok" : 0,
+        "errmsg" : "unknown top level operator: $end. If you have a field name that starts with a '$' symbol, consider using $getField or $setField.",
+        "code" : 2,
+        "codeName" : "BadValue"
+}
+> db.movie.find({$and:[{"budget":{$gt:10000}},{"production_year":{$gt:2000}}]})
+{ "_id" : ObjectId("6228daeab035f886530f1b51"), "movie_name" : "Guerrilla: The Taking of Patty Hearst", "movie_genre" : "Documentary", "production_year" : 2018, "budget" : 15226 }
+{ "_id" : ObjectId("6228daeab035f886530f1b52"), "movie_name" : "Glorious Technicolor", "movie_genre" : "Documentary", "production_year" : 2012, "budget" : 19950 }
+{ "_id" : ObjectId("6228daeab035f886530f1b54"), "movie_name" : "Detropia", "movie_genre" : "Documentary", "production_year" : 2018, "budget" : 19680 }
+{ "_id" : ObjectId("6228daeab035f886530f1b55"), "movie_name" : "Machine Girl, The (Kataude mashin gâru)", "movie_genre" : "Action|Comedy|Fantasy|Horror|Thriller", "production_year" : 2006, "budget" : 10444 }
+{ "_id" : ObjectId("6228daeab035f886530f1b57"), "movie_name" : "Clown", "movie_genre" : "Drama|Horror", "production_year" : 2010, "budget" : 14356 }
+{ "_id" : ObjectId("6228daeab035f886530f1b58"), "movie_name" : "Turandot Project, The", "movie_genre" : "Documentary", "production_year" : 2017, "budget" : 14765 }
+{ "_id" : ObjectId("6228daeab035f886530f1b5a"), "movie_name" : "8 Million Ways to Die", "movie_genre" : "Action|Adventure|Crime|Thriller", "production_year" : 2020, "budget" : 10029 }
+{ "_id" : ObjectId("6228daeab035f886530f1b5d"), "movie_name" : "What Have They Done to Your Daughters?", "movie_genre" : "Mystery|Romance|Thriller", "production_year" : 2014, "budget" : 13737 }
+{ "_id" : ObjectId("6228daeab035f886530f1b5f"), "movie_name" : "Finder's Fee", "movie_genre" : "Drama|Thriller", "production_year" : 2014, "budget" : 13547 }
+{ "_id" : ObjectId("6228daeab035f886530f1b60"), "movie_name" : "Beerfest", "movie_genre" : "Comedy", "production_year" : 2012, "budget" : 11067 }
+{ "_id" : ObjectId("6228daeab035f886530f1b61"), "movie_name" : "Upperworld", "movie_genre" : "Drama", "production_year" : 2002, "budget" : 13506 }
+{ "_id" : ObjectId("6228daeab035f886530f1b62"), "movie_name" : "What Richard Did", "movie_genre" : "Drama", "production_year" : 2012, "budget" : 10405 }
+{ "_id" : ObjectId("6228daeab035f886530f1b66"), "movie_name" : "Lives of a Bengal Lancer, The", "movie_genre" : "Adventure|Drama", "production_year" : 2012, "budget" : 19197 }
+{ "_id" : ObjectId("6228daeab035f886530f1b67"), "movie_name" : "LennoNYC", "movie_genre" : "Documentary", "production_year" : 2009, "budget" : 14465 }
+{ "_id" : ObjectId("6228daeab035f886530f1b68"), "movie_name" : "Patriot Games", "movie_genre" : "Action|Thriller", "production_year" : 2020, "budget" : 15846 }
+{ "_id" : ObjectId("6228daeab035f886530f1b6a"), "movie_name" : "Disfigured", "movie_genre" : "Drama", "production_year" : 2020, "budget" : 19274 }
+{ "_id" : ObjectId("6228daeab035f886530f1b6c"), "movie_name" : "Mephisto", "movie_genre" : "Drama|War", "production_year" : 2019, "budget" : 18803 }
+{ "_id" : ObjectId("6228daeab035f886530f1b70"), "movie_name" : "Case départ", "movie_genre" : "Comedy", "production_year" : 2018, "budget" : 16768 }
+{ "_id" : ObjectId("6228daeab035f886530f1b71"), "movie_name" : "Hell Is for Heroes", "movie_genre" : "Drama|War", "production_year" : 2007, "budget" : 10174 }
+{ "_id" : ObjectId("6228daeab035f886530f1b77"), "movie_name" : "Eye for an Eye, An", "movie_genre" : "Action|Crime|Thriller", "production_year" : 2008, "budget" : 15948 }
+Type "it" for more
+> db.movie.find({$or:[{"budget":{$gt:10000}},{"production_year":{$gt:2000}}]})
+{ "_id" : ObjectId("6228daeab035f886530f1b50"), "movie_name" : "Urbanized", "movie_genre" : "Documentary", "production_year" : 1992, "budget" : 19731 }
+{ "_id" : ObjectId("6228daeab035f886530f1b51"), "movie_name" : "Guerrilla: The Taking of Patty Hearst", "movie_genre" : "Documentary", "production_year" : 2018, "budget" : 15226 }
+{ "_id" : ObjectId("6228daeab035f886530f1b52"), "movie_name" : "Glorious Technicolor", "movie_genre" : "Documentary", "production_year" : 2012, "budget" : 19950 }
+{ "_id" : ObjectId("6228daeab035f886530f1b53"), "movie_name" : "Trip, The", "movie_genre" : "Comedy|Drama|Romance", "production_year" : 2004, "budget" : 9351 }
+{ "_id" : ObjectId("6228daeab035f886530f1b54"), "movie_name" : "Detropia", "movie_genre" : "Documentary", "production_year" : 2018, "budget" : 19680 }
+{ "_id" : ObjectId("6228daeab035f886530f1b55"), "movie_name" : "Machine Girl, The (Kataude mashin gâru)", "movie_genre" : "Action|Comedy|Fantasy|Horror|Thriller", "production_year" : 2006, "budget" : 10444 }
+{ "_id" : ObjectId("6228daeab035f886530f1b57"), "movie_name" : "Clown", "movie_genre" : "Drama|Horror", "production_year" : 2010, "budget" : 14356 }
+{ "_id" : ObjectId("6228daeab035f886530f1b58"), "movie_name" : "Turandot Project, The", "movie_genre" : "Documentary", "production_year" : 2017, "budget" : 14765 }
+{ "_id" : ObjectId("6228daeab035f886530f1b59"), "movie_name" : "Tough Enough (Knallhart)", "movie_genre" : "Crime|Drama", "production_year" : 1995, "budget" : 11144 }
+{ "_id" : ObjectId("6228daeab035f886530f1b5a"), "movie_name" : "8 Million Ways to Die", "movie_genre" : "Action|Adventure|Crime|Thriller", "production_year" : 2020, "budget" : 10029 }
+{ "_id" : ObjectId("6228daeab035f886530f1b5b"), "movie_name" : "Harmagedon", "movie_genre" : "Action|Drama", "production_year" : 1990, "budget" : 16633 }
+{ "_id" : ObjectId("6228daeab035f886530f1b5c"), "movie_name" : "Welcome to Australia", "movie_genre" : "Documentary", "production_year" : 1990, "budget" : 19039 }
+{ "_id" : ObjectId("6228daeab035f886530f1b5d"), "movie_name" : "What Have They Done to Your Daughters?", "movie_genre" : "Mystery|Romance|Thriller", "production_year" : 2014, "budget" : 13737 }
+{ "_id" : ObjectId("6228daeab035f886530f1b5e"), "movie_name" : "Canyon, The", "movie_genre" : "Thriller", "production_year" : 1991, "budget" : 18917 }
+{ "_id" : ObjectId("6228daeab035f886530f1b5f"), "movie_name" : "Finder's Fee", "movie_genre" : "Drama|Thriller", "production_year" : 2014, "budget" : 13547 }
+{ "_id" : ObjectId("6228daeab035f886530f1b60"), "movie_name" : "Beerfest", "movie_genre" : "Comedy", "production_year" : 2012, "budget" : 11067 }
+{ "_id" : ObjectId("6228daeab035f886530f1b61"), "movie_name" : "Upperworld", "movie_genre" : "Drama", "production_year" : 2002, "budget" : 13506 }
+{ "_id" : ObjectId("6228daeab035f886530f1b62"), "movie_name" : "What Richard Did", "movie_genre" : "Drama", "production_year" : 2012, "budget" : 10405 }
+{ "_id" : ObjectId("6228daeab035f886530f1b63"), "movie_name" : "Losers, The", "movie_genre" : "Action|Adventure|Drama|Mystery|Thriller", "production_year" : 1999, "budget" : 14055 }
+{ "_id" : ObjectId("6228daeab035f886530f1b64"), "movie_name" : "The Dust Bowl", "movie_genre" : "Documentary", "production_year" : 1993, "budget" : 17543 }
+Type "it" for more
+> db.movie.find({$nor:[{"budget":{$gt:10000}},{"production_year":{$gt:2000}}]})
+{ "_id" : ObjectId("6228daeab035f886530f1b56"), "movie_name" : "Besieged (a.k.a. L' Assedio)", "movie_genre" : "Drama", "production_year" : 1992, "budget" : 9449 }
+{ "_id" : ObjectId("6228daeab035f886530f1b74"), "movie_name" : "Return to the 36th Chamber (Shao Lin da peng da shi) ", "movie_genre" : "Action|Comedy", "production_year" : 1990, "budget" : 9945 }
+{ "_id" : ObjectId("6228daeab035f886530f1b86"), "movie_name" : "Other F Word, The", "movie_genre" : "Comedy|Documentary|Drama", "production_year" : 2000, "budget" : 9071 }
+{ "_id" : ObjectId("6228daeab035f886530f1bb7"), "movie_name" : "Living Wake, The", "movie_genre" : "Comedy", "production_year" : 1995, "budget" : 9242 }
+{ "_id" : ObjectId("6228daeab035f886530f1bc6"), "movie_name" : "Disorder", "movie_genre" : "Documentary", "production_year" : 1998, "budget" : 9264 }
+{ "_id" : ObjectId("6228daeab035f886530f1be3"), "movie_name" : "Like Father, Like Son", "movie_genre" : "Comedy", "production_year" : 1993, "budget" : 9413 }
+{ "_id" : ObjectId("6228daeab035f886530f1c0f"), "movie_name" : "Edward, My Son", "movie_genre" : "Drama", "production_year" : 1995, "budget" : 9794 }
+{ "_id" : ObjectId("6228daeab035f886530f1c34"), "movie_name" : "Last Resort (National Lampoon's Last Resort)", "movie_genre" : "Comedy", "production_year" : 1996, "budget" : 9343 }
+{ "_id" : ObjectId("6228daeab035f886530f1c5a"), "movie_name" : "Gainsbourg (Vie Héroïque)", "movie_genre" : "Drama|Musical|Romance", "production_year" : 1996, "budget" : 9816 }
+{ "_id" : ObjectId("6228daeab035f886530f1c71"), "movie_name" : "Hotel Chevalier (Part 1 of 'The Darjeeling Limited')", "movie_genre" : "Drama", "production_year" : 1995, "budget" : 9050 }
+{ "_id" : ObjectId("6228daeab035f886530f1c73"), "movie_name" : "Wonder Man", "movie_genre" : "Comedy|Fantasy|Musical", "production_year" : 1992, "budget" : 9767 }
+{ "_id" : ObjectId("6228daeab035f886530f1cb0"), "movie_name" : "Butterfly", "movie_genre" : "Drama", "production_year" : 1993, "budget" : 9248 }
+{ "_id" : ObjectId("6228daeab035f886530f1cc5"), "movie_name" : "Jamie and Jessie Are Not Together", "movie_genre" : "Comedy|Musical|Romance", "production_year" : 1993, "budget" : 9391 }
+{ "_id" : ObjectId("6228daeab035f886530f1cda"), "movie_name" : "Bad Men of Missouri", "movie_genre" : "Action|Romance|Western", "production_year" : 1993, "budget" : 9195 }
+{ "_id" : ObjectId("6228daeab035f886530f1d0b"), "movie_name" : "To Catch a Thief", "movie_genre" : "Crime|Mystery|Romance|Thriller", "production_year" : 1997, "budget" : 9218 }
+{ "_id" : ObjectId("6228daeab035f886530f1d15"), "movie_name" : "Reclaim Your Brain (Free Rainer)", "movie_genre" : "Comedy|Crime|Drama|Romance", "production_year" : 1999, "budget" : 9266 }
+{ "_id" : ObjectId("6228daeab035f886530f1d20"), "movie_name" : "Net Worth", "movie_genre" : "Drama", "production_year" : 1995, "budget" : 9471 }
+{ "_id" : ObjectId("6228daeab035f886530f1d39"), "movie_name" : "Hart of London, The", "movie_genre" : "Drama", "production_year" : 1993, "budget" : 9048 }
+> db.movie.find({$not:[{"budget":{$eq:10000}},{"production_year":{$eq:2000}}]})
+Error: error: {
+        "ok" : 0,
+        "errmsg" : "unknown top level operator: $not. If you have a field name that starts with a '$' symbol, consider using $getField or $setField.",
+        "code" : 2,
+        "codeName" : "BadValue"
+}
+> db.movie.find($and[{"budget":{$ne:10000}},{"production_year":{$ne:2000}}]})
+uncaught exception: SyntaxError: missing ) after argument list :
+@(shell):1:73
+> db.movie.find({$and:[{"budget":{$ne:10000}},{"production_year":{$ne:2000}}]})
+{ "_id" : ObjectId("6228daeab035f886530f1b50"), "movie_name" : "Urbanized", "movie_genre" : "Documentary", "production_year" : 1992, "budget" : 19731 }
+{ "_id" : ObjectId("6228daeab035f886530f1b51"), "movie_name" : "Guerrilla: The Taking of Patty Hearst", "movie_genre" : "Documentary", "production_year" : 2018, "budget" : 15226 }
+{ "_id" : ObjectId("6228daeab035f886530f1b52"), "movie_name" : "Glorious Technicolor", "movie_genre" : "Documentary", "production_year" : 2012, "budget" : 19950 }
+{ "_id" : ObjectId("6228daeab035f886530f1b53"), "movie_name" : "Trip, The", "movie_genre" : "Comedy|Drama|Romance", "production_year" : 2004, "budget" : 9351 }
+{ "_id" : ObjectId("6228daeab035f886530f1b54"), "movie_name" : "Detropia", "movie_genre" : "Documentary", "production_year" : 2018, "budget" : 19680 }
+{ "_id" : ObjectId("6228daeab035f886530f1b55"), "movie_name" : "Machine Girl, The (Kataude mashin gâru)", "movie_genre" : "Action|Comedy|Fantasy|Horror|Thriller", "production_year" : 2006, "budget" : 10444 }
+{ "_id" : ObjectId("6228daeab035f886530f1b56"), "movie_name" : "Besieged (a.k.a. L' Assedio)", "movie_genre" : "Drama", "production_year" : 1992, "budget" : 9449 }
+{ "_id" : ObjectId("6228daeab035f886530f1b57"), "movie_name" : "Clown", "movie_genre" : "Drama|Horror", "production_year" : 2010, "budget" : 14356 }
+{ "_id" : ObjectId("6228daeab035f886530f1b58"), "movie_name" : "Turandot Project, The", "movie_genre" : "Documentary", "production_year" : 2017, "budget" : 14765 }
+{ "_id" : ObjectId("6228daeab035f886530f1b59"), "movie_name" : "Tough Enough (Knallhart)", "movie_genre" : "Crime|Drama", "production_year" : 1995, "budget" : 11144 }
+{ "_id" : ObjectId("6228daeab035f886530f1b5a"), "movie_name" : "8 Million Ways to Die", "movie_genre" : "Action|Adventure|Crime|Thriller", "production_year" : 2020, "budget" : 10029 }
+{ "_id" : ObjectId("6228daeab035f886530f1b5b"), "movie_name" : "Harmagedon", "movie_genre" : "Action|Drama", "production_year" : 1990, "budget" : 16633 }
+{ "_id" : ObjectId("6228daeab035f886530f1b5c"), "movie_name" : "Welcome to Australia", "movie_genre" : "Documentary", "production_year" : 1990, "budget" : 19039 }
+{ "_id" : ObjectId("6228daeab035f886530f1b5d"), "movie_name" : "What Have They Done to Your Daughters?", "movie_genre" : "Mystery|Romance|Thriller", "production_year" : 2014, "budget" : 13737 }
+{ "_id" : ObjectId("6228daeab035f886530f1b5e"), "movie_name" : "Canyon, The", "movie_genre" : "Thriller", "production_year" : 1991, "budget" : 18917 }
+{ "_id" : ObjectId("6228daeab035f886530f1b5f"), "movie_name" : "Finder's Fee", "movie_genre" : "Drama|Thriller", "production_year" : 2014, "budget" : 13547 }
+{ "_id" : ObjectId("6228daeab035f886530f1b60"), "movie_name" : "Beerfest", "movie_genre" : "Comedy", "production_year" : 2012, "budget" : 11067 }
+{ "_id" : ObjectId("6228daeab035f886530f1b61"), "movie_name" : "Upperworld", "movie_genre" : "Drama", "production_year" : 2002, "budget" : 13506 }
+{ "_id" : ObjectId("6228daeab035f886530f1b62"), "movie_name" : "What Richard Did", "movie_genre" : "Drama", "production_year" : 2012, "budget" : 10405 }
+{ "_id" : ObjectId("6228daeab035f886530f1b63"), "movie_name" : "Losers, The", "movie_genre" : "Action|Adventure|Drama|Mystery|Thriller", "production_year" : 1999, "budget" : 14055 }
+Type "it" for more
+> db.movie.find({$and:[{"budget":{$gte:10000}},{"production_year":{$gte:2000}}]})
+{ "_id" : ObjectId("6228daeab035f886530f1b51"), "movie_name" : "Guerrilla: The Taking of Patty Hearst", "movie_genre" : "Documentary", "production_year" : 2018, "budget" : 15226 }
+{ "_id" : ObjectId("6228daeab035f886530f1b52"), "movie_name" : "Glorious Technicolor", "movie_genre" : "Documentary", "production_year" : 2012, "budget" : 19950 }
+{ "_id" : ObjectId("6228daeab035f886530f1b54"), "movie_name" : "Detropia", "movie_genre" : "Documentary", "production_year" : 2018, "budget" : 19680 }
+{ "_id" : ObjectId("6228daeab035f886530f1b55"), "movie_name" : "Machine Girl, The (Kataude mashin gâru)", "movie_genre" : "Action|Comedy|Fantasy|Horror|Thriller", "production_year" : 2006, "budget" : 10444 }
+{ "_id" : ObjectId("6228daeab035f886530f1b57"), "movie_name" : "Clown", "movie_genre" : "Drama|Horror", "production_year" : 2010, "budget" : 14356 }
+{ "_id" : ObjectId("6228daeab035f886530f1b58"), "movie_name" : "Turandot Project, The", "movie_genre" : "Documentary", "production_year" : 2017, "budget" : 14765 }
+{ "_id" : ObjectId("6228daeab035f886530f1b5a"), "movie_name" : "8 Million Ways to Die", "movie_genre" : "Action|Adventure|Crime|Thriller", "production_year" : 2020, "budget" : 10029 }
+{ "_id" : ObjectId("6228daeab035f886530f1b5d"), "movie_name" : "What Have They Done to Your Daughters?", "movie_genre" : "Mystery|Romance|Thriller", "production_year" : 2014, "budget" : 13737 }
+{ "_id" : ObjectId("6228daeab035f886530f1b5f"), "movie_name" : "Finder's Fee", "movie_genre" : "Drama|Thriller", "production_year" : 2014, "budget" : 13547 }
+{ "_id" : ObjectId("6228daeab035f886530f1b60"), "movie_name" : "Beerfest", "movie_genre" : "Comedy", "production_year" : 2012, "budget" : 11067 }
+{ "_id" : ObjectId("6228daeab035f886530f1b61"), "movie_name" : "Upperworld", "movie_genre" : "Drama", "production_year" : 2002, "budget" : 13506 }
+{ "_id" : ObjectId("6228daeab035f886530f1b62"), "movie_name" : "What Richard Did", "movie_genre" : "Drama", "production_year" : 2012, "budget" : 10405 }
+{ "_id" : ObjectId("6228daeab035f886530f1b66"), "movie_name" : "Lives of a Bengal Lancer, The", "movie_genre" : "Adventure|Drama", "production_year" : 2012, "budget" : 19197 }
+{ "_id" : ObjectId("6228daeab035f886530f1b67"), "movie_name" : "LennoNYC", "movie_genre" : "Documentary", "production_year" : 2009, "budget" : 14465 }
+{ "_id" : ObjectId("6228daeab035f886530f1b68"), "movie_name" : "Patriot Games", "movie_genre" : "Action|Thriller", "production_year" : 2020, "budget" : 15846 }
+{ "_id" : ObjectId("6228daeab035f886530f1b6a"), "movie_name" : "Disfigured", "movie_genre" : "Drama", "production_year" : 2020, "budget" : 19274 }
+{ "_id" : ObjectId("6228daeab035f886530f1b6c"), "movie_name" : "Mephisto", "movie_genre" : "Drama|War", "production_year" : 2019, "budget" : 18803 }
+{ "_id" : ObjectId("6228daeab035f886530f1b70"), "movie_name" : "Case départ", "movie_genre" : "Comedy", "production_year" : 2018, "budget" : 16768 }
+{ "_id" : ObjectId("6228daeab035f886530f1b71"), "movie_name" : "Hell Is for Heroes", "movie_genre" : "Drama|War", "production_year" : 2007, "budget" : 10174 }
+{ "_id" : ObjectId("6228daeab035f886530f1b77"), "movie_name" : "Eye for an Eye, An", "movie_genre" : "Action|Crime|Thriller", "production_year" : 2008, "budget" : 15948 }
+Type "it" for more
+> db.movie.find({$range:[2000,2012,1]})
+Error: error: {
+        "ok" : 0,
+        "errmsg" : "unknown top level operator: $range. If you have a field name that starts with a '$' symbol, consider using $getField or $setField.",
+        "code" : 2,
+        "codeName" : "BadValue"
+}
+> db.movie.find({production_year:{$in:[2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010]}})
+{ "_id" : ObjectId("6228daeab035f886530f1b53"), "movie_name" : "Trip, The", "movie_genre" : "Comedy|Drama|Romance", "production_year" : 2004, "budget" : 9351 }
+{ "_id" : ObjectId("6228daeab035f886530f1b55"), "movie_name" : "Machine Girl, The (Kataude mashin gâru)", "movie_genre" : "Action|Comedy|Fantasy|Horror|Thriller", "production_year" : 2006, "budget" : 10444 }
+{ "_id" : ObjectId("6228daeab035f886530f1b57"), "movie_name" : "Clown", "movie_genre" : "Drama|Horror", "production_year" : 2010, "budget" : 14356 }
+{ "_id" : ObjectId("6228daeab035f886530f1b61"), "movie_name" : "Upperworld", "movie_genre" : "Drama", "production_year" : 2002, "budget" : 13506 }
+{ "_id" : ObjectId("6228daeab035f886530f1b67"), "movie_name" : "LennoNYC", "movie_genre" : "Documentary", "production_year" : 2009, "budget" : 14465 }
+{ "_id" : ObjectId("6228daeab035f886530f1b71"), "movie_name" : "Hell Is for Heroes", "movie_genre" : "Drama|War", "production_year" : 2007, "budget" : 10174 }
+{ "_id" : ObjectId("6228daeab035f886530f1b77"), "movie_name" : "Eye for an Eye, An", "movie_genre" : "Action|Crime|Thriller", "production_year" : 2008, "budget" : 15948 }
+{ "_id" : ObjectId("6228daeab035f886530f1b7a"), "movie_name" : "Pekka ja Pätkä puistotäteinä", "movie_genre" : "Comedy", "production_year" : 2006, "budget" : 19738 }
+{ "_id" : ObjectId("6228daeab035f886530f1b7d"), "movie_name" : "Stand Up and Fight", "movie_genre" : "Drama|Romance|Western", "production_year" : 2003, "budget" : 17560 }
+{ "_id" : ObjectId("6228daeab035f886530f1b7f"), "movie_name" : "Kansas City", "movie_genre" : "Crime|Drama|Musical|Thriller", "production_year" : 2000, "budget" : 18176 }
+{ "_id" : ObjectId("6228daeab035f886530f1b81"), "movie_name" : "Deranged", "movie_genre" : "Horror|Thriller", "production_year" : 2008, "budget" : 17715 }
+{ "_id" : ObjectId("6228daeab035f886530f1b83"), "movie_name" : "We Are Marshall", "movie_genre" : "Drama", "production_year" : 2005, "budget" : 13307 }
+{ "_id" : ObjectId("6228daeab035f886530f1b85"), "movie_name" : "Ida", "movie_genre" : "Drama", "production_year" : 2000, "budget" : 17667 }
+{ "_id" : ObjectId("6228daeab035f886530f1b86"), "movie_name" : "Other F Word, The", "movie_genre" : "Comedy|Documentary|Drama", "production_year" : 2000, "budget" : 9071 }
+{ "_id" : ObjectId("6228daeab035f886530f1b89"), "movie_name" : "Broken Sky (El cielo dividido)", "movie_genre" : "Drama", "production_year" : 2003, "budget" : 10680 }
+{ "_id" : ObjectId("6228daeab035f886530f1b8c"), "movie_name" : "Aaron Loves Angela", "movie_genre" : "Comedy|Drama|Romance|Thriller", "production_year" : 2005, "budget" : 13761 }
+{ "_id" : ObjectId("6228daeab035f886530f1b90"), "movie_name" : "Miss Kicki", "movie_genre" : "Drama", "production_year" : 2001, "budget" : 10332 }
+{ "_id" : ObjectId("6228daeab035f886530f1b91"), "movie_name" : "London Conspiracy", "movie_genre" : "Action|Mystery", "production_year" : 2008, "budget" : 9094 }
+{ "_id" : ObjectId("6228daeab035f886530f1b92"), "movie_name" : "Soldier's Plaything, A", "movie_genre" : "Comedy|Drama|Romance|War", "production_year" : 2005, "budget" : 19452 }
+{ "_id" : ObjectId("6228daeab035f886530f1b96"), "movie_name" : "Story of Xinghua, The (Xinghua san yue tian)", "movie_genre" : "Drama", "production_year" : 2005, "budget" : 19745 }
+Type "it" for more
+> db.movie.find().sort({production_year:-1})
+{ "_id" : ObjectId("6228daeab035f886530f1b5a"), "movie_name" : "8 Million Ways to Die", "movie_genre" : "Action|Adventure|Crime|Thriller", "production_year" : 2020, "budget" : 10029 }
+{ "_id" : ObjectId("6228daeab035f886530f1b68"), "movie_name" : "Patriot Games", "movie_genre" : "Action|Thriller", "production_year" : 2020, "budget" : 15846 }
+{ "_id" : ObjectId("6228daeab035f886530f1b6a"), "movie_name" : "Disfigured", "movie_genre" : "Drama", "production_year" : 2020, "budget" : 19274 }
+{ "_id" : ObjectId("6228daeab035f886530f1ba7"), "movie_name" : "Jonathan Livingston Seagull", "movie_genre" : "Drama", "production_year" : 2020, "budget" : 14678 }
+{ "_id" : ObjectId("6228daeab035f886530f1bd9"), "movie_name" : "Stay Hungry", "movie_genre" : "Comedy|Drama", "production_year" : 2020, "budget" : 17680 }
+{ "_id" : ObjectId("6228daeab035f886530f1be9"), "movie_name" : "Talhotblond:", "movie_genre" : "Documentary|Thriller", "production_year" : 2020, "budget" : 10508 }
+{ "_id" : ObjectId("6228daeab035f886530f1beb"), "movie_name" : "Fast & Furious (Fast and the Furious 4, The)", "movie_genre" : "Action|Crime|Drama|Thriller", "production_year" : 2020, "budget" : 10566 }
+{ "_id" : ObjectId("6228daeab035f886530f1bfc"), "movie_name" : "Song of Ceylon, The", "movie_genre" : "Documentary", "production_year" : 2020, "budget" : 12232 }
+{ "_id" : ObjectId("6228daeab035f886530f1c06"), "movie_name" : "3rd World Hero (Bayaning Third World)", "movie_genre" : "Drama", "production_year" : 2020, "budget" : 12794 }
+{ "_id" : ObjectId("6228daeab035f886530f1c26"), "movie_name" : "Chinese Ghost Story, A (Sinnui yauwan)", "movie_genre" : "Action|Fantasy|Horror|Romance", "production_year" : 2020, "budget" : 15239 }
+{ "_id" : ObjectId("6228daeab035f886530f1c3f"), "movie_name" : "Velvet Goldmine", "movie_genre" : "Drama", "production_year" : 2020, "budget" : 12399 }
+{ "_id" : ObjectId("6228daeab035f886530f1c6f"), "movie_name" : "Chronicles (Crónicas)", "movie_genre" : "Crime|Drama", "production_year" : 2020, "budget" : 11634 }
+{ "_id" : ObjectId("6228daeab035f886530f1c79"), "movie_name" : "Quiz Show", "movie_genre" : "Drama", "production_year" : 2020, "budget" : 16203 }
+{ "_id" : ObjectId("6228daeab035f886530f1c8e"), "movie_name" : "Nightmare Before Christmas, The", "movie_genre" : "Animation|Children|Fantasy|Musical", "production_year" : 2020, "budget" : 17593 }
+{ "_id" : ObjectId("6228daeab035f886530f1c95"), "movie_name" : "Incredibly Strange Creatures Who Stopped Living and Became Mixed-Up Zombies!!?, The", "movie_genre" : "Horror|Mystery", "production_year" : 2020, "budget" : 9444 }
+{ "_id" : ObjectId("6228daeab035f886530f1cc1"), "movie_name" : "One Body Too Many", "movie_genre" : "Comedy|Horror|Mystery", "production_year" : 2020, "budget" : 9928 }
+{ "_id" : ObjectId("6228daeab035f886530f1cdc"), "movie_name" : "I Love You, I Love You (Je t'aime je t'aime)", "movie_genre" : "Drama|Sci-Fi", "production_year" : 2020, "budget" : 16145 }
+{ "_id" : ObjectId("6228daeab035f886530f1ce5"), "movie_name" : "The Baby Maker", "movie_genre" : "Drama", "production_year" : 2020, "budget" : 10744 }
+{ "_id" : ObjectId("6228daeab035f886530f1d27"), "movie_name" : "Dark Touch", "movie_genre" : "Horror", "production_year" : 2020, "budget" : 12447 }
+{ "_id" : ObjectId("6228daeab035f886530f1d3f"), "movie_name" : "The Six Million Dollar Man", "movie_genre" : "Adventure|Sci-Fi", "production_year" : 2020, "budget" : 10393 }
+Type "it" for more
+> db.movie.find().skip(10)
+{ "_id" : ObjectId("6228daeab035f886530f1b5a"), "movie_name" : "8 Million Ways to Die", "movie_genre" : "Action|Adventure|Crime|Thriller", "production_year" : 2020, "budget" : 10029 }
+{ "_id" : ObjectId("6228daeab035f886530f1b5b"), "movie_name" : "Harmagedon", "movie_genre" : "Action|Drama", "production_year" : 1990, "budget" : 16633 }
+{ "_id" : ObjectId("6228daeab035f886530f1b5c"), "movie_name" : "Welcome to Australia", "movie_genre" : "Documentary", "production_year" : 1990, "budget" : 19039 }
+{ "_id" : ObjectId("6228daeab035f886530f1b5d"), "movie_name" : "What Have They Done to Your Daughters?", "movie_genre" : "Mystery|Romance|Thriller", "production_year" : 2014, "budget" : 13737 }
+{ "_id" : ObjectId("6228daeab035f886530f1b5e"), "movie_name" : "Canyon, The", "movie_genre" : "Thriller", "production_year" : 1991, "budget" : 18917 }
+{ "_id" : ObjectId("6228daeab035f886530f1b5f"), "movie_name" : "Finder's Fee", "movie_genre" : "Drama|Thriller", "production_year" : 2014, "budget" : 13547 }
+{ "_id" : ObjectId("6228daeab035f886530f1b60"), "movie_name" : "Beerfest", "movie_genre" : "Comedy", "production_year" : 2012, "budget" : 11067 }
+{ "_id" : ObjectId("6228daeab035f886530f1b61"), "movie_name" : "Upperworld", "movie_genre" : "Drama", "production_year" : 2002, "budget" : 13506 }
+{ "_id" : ObjectId("6228daeab035f886530f1b62"), "movie_name" : "What Richard Did", "movie_genre" : "Drama", "production_year" : 2012, "budget" : 10405 }
+{ "_id" : ObjectId("6228daeab035f886530f1b63"), "movie_name" : "Losers, The", "movie_genre" : "Action|Adventure|Drama|Mystery|Thriller", "production_year" : 1999, "budget" : 14055 }
+{ "_id" : ObjectId("6228daeab035f886530f1b64"), "movie_name" : "The Dust Bowl", "movie_genre" : "Documentary", "production_year" : 1993, "budget" : 17543 }
+{ "_id" : ObjectId("6228daeab035f886530f1b65"), "movie_name" : "Boomerang", "movie_genre" : "Comedy|Romance", "production_year" : 1991, "budget" : 15938 }
+{ "_id" : ObjectId("6228daeab035f886530f1b66"), "movie_name" : "Lives of a Bengal Lancer, The", "movie_genre" : "Adventure|Drama", "production_year" : 2012, "budget" : 19197 }
+{ "_id" : ObjectId("6228daeab035f886530f1b67"), "movie_name" : "LennoNYC", "movie_genre" : "Documentary", "production_year" : 2009, "budget" : 14465 }
+{ "_id" : ObjectId("6228daeab035f886530f1b68"), "movie_name" : "Patriot Games", "movie_genre" : "Action|Thriller", "production_year" : 2020, "budget" : 15846 }
+{ "_id" : ObjectId("6228daeab035f886530f1b69"), "movie_name" : "To Mars by A-Bomb: The Secret History of Project Orion", "movie_genre" : "Documentary", "production_year" : 2013, "budget" : 9086 }
+{ "_id" : ObjectId("6228daeab035f886530f1b6a"), "movie_name" : "Disfigured", "movie_genre" : "Drama", "production_year" : 2020, "budget" : 19274 }
+{ "_id" : ObjectId("6228daeab035f886530f1b6b"), "movie_name" : "Last Song, The", "movie_genre" : "Drama|Romance", "production_year" : 1992, "budget" : 19180 }
+{ "_id" : ObjectId("6228daeab035f886530f1b6c"), "movie_name" : "Mephisto", "movie_genre" : "Drama|War", "production_year" : 2019, "budget" : 18803 }
+{ "_id" : ObjectId("6228daeab035f886530f1b6d"), "movie_name" : "Taming of the Shrew, The", "movie_genre" : "Comedy", "production_year" : 2018, "budget" : 9285 }
+Type "it" for more
+> db.movie.find(5).skip(10)
+uncaught exception: Error: don't know how to massage : number :
+DBCollection.prototype._massageObject@src/mongo/shell/collection.js:215:11
+DBCollection.prototype.find@src/mongo/shell/collection.js:223:30
+@(shell):1:1
+> db.movie.find(5)
+uncaught exception: Error: don't know how to massage : number :
+DBCollection.prototype._massageObject@src/mongo/shell/collection.js:215:11
+DBCollection.prototype.find@src/mongo/shell/collection.js:223:30
+@(shell):1:1
+> db.movie.find({5}).skip(10)
+uncaught exception: SyntaxError: missing : after property id :
+@(shell):1:16
+> db.movie.findFive().skip(10)
+uncaught exception: TypeError: db.movie.findFive is not a function :
+@(shell):1:1
+> db.movie.findOne().skip(10)
+uncaught exception: TypeError: db.movie.findOne(...).skip is not a function :
+@(shell):1:1
+> db.movie.findOne()
+{
+        "_id" : ObjectId("6228daeab035f886530f1b50"),
+        "movie_name" : "Urbanized",
+        "movie_genre" : "Documentary",
+        "production_year" : 1992,
+        "budget" : 19731
+}
+> db.movie.findFive()
+uncaught exception: TypeError: db.movie.findFive is not a function :
+@(shell):1:1
+>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Microsoft Windows [Version 10.0.19042.1415]
+(c) Microsoft Corporation. All rights reserved.
+
+
+C:\Users\HP>mongo
+MongoDB shell version v5.0.6
+connecting to: mongodb://127.0.0.1:27017/?compressors=disabled&gssapiServiceName=mongodb
+Implicit session: session { "id" : UUID("b0660712-54b0-4b4b-83a1-6c9be1fdbc1b") }
+MongoDB server version: 5.0.6
+================
+Warning: the "mongo" shell has been superseded by "mongosh",
+which delivers improved usability and compatibility.The "mongo" shell has been deprecated and will be removed in
+an upcoming release.
+For installation instructions, see
+https://docs.mongodb.com/mongodb-shell/install/
+================
+---
+The server generated these startup warnings when booting:
+        2022-03-07T14:34:14.671+05:30: Access control is not enabled for the database. Read and write access to data and configuration is unrestricted
+---
+---
+        Enable MongoDB's free cloud-based monitoring service, which will then receive and display
+        metrics about your deployment (disk utilization, CPU, operation statistics, etc).
+
+
+        The monitoring data will be available on a MongoDB website with a unique URL accessible to you
+        and anyone you share the URL with. MongoDB may use this information to make product
+        improvements and to suggest MongoDB products and deployment options to you.
+
+
+        To enable free monitoring, run the following command: db.enableFreeMonitoring()
+        To permanently disable this reminder, run the following command: db.disableFreeMonitoring()
+---
+> use web_15
+switched to db web_15
+> show collections
+Web_15
+movie
+users
+> db.movie.find({movie_name:{$eq:"movie_name"}})
+> db.movie.find({movie_name:{$ne:"movie_name"}})
+{ "_id" : ObjectId("6228daeab035f886530f1b50"), "movie_name" : "Urbanized", "movie_genre" : "Documentary", "production_year" : 1992, "budget" : 19731 }
+{ "_id" : ObjectId("6228daeab035f886530f1b51"), "movie_name" : "Guerrilla: The Taking of Patty Hearst", "movie_genre" : "Documentary", "production_year" : 2018, "budget" : 15226 }
+{ "_id" : ObjectId("6228daeab035f886530f1b52"), "movie_name" : "Glorious Technicolor", "movie_genre" : "Documentary", "production_year" : 2012, "budget" : 19950 }
+{ "_id" : ObjectId("6228daeab035f886530f1b53"), "movie_name" : "Trip, The", "movie_genre" : "Comedy|Drama|Romance", "production_year" : 2004, "budget" : 9351 }
+{ "_id" : ObjectId("6228daeab035f886530f1b54"), "movie_name" : "Detropia", "movie_genre" : "Documentary", "production_year" : 2018, "budget" : 19680 }
+{ "_id" : ObjectId("6228daeab035f886530f1b55"), "movie_name" : "Machine Girl, The (Kataude mashin gâru)", "movie_genre" : "Action|Comedy|Fantasy|Horror|Thriller", "production_year" : 2006, "budget" : 10444 }
+{ "_id" : ObjectId("6228daeab035f886530f1b56"), "movie_name" : "Besieged (a.k.a. L' Assedio)", "movie_genre" : "Drama", "production_year" : 1992, "budget" : 9449 }
+{ "_id" : ObjectId("6228daeab035f886530f1b57"), "movie_name" : "Clown", "movie_genre" : "Drama|Horror", "production_year" : 2010, "budget" : 14356 }
+{ "_id" : ObjectId("6228daeab035f886530f1b58"), "movie_name" : "Turandot Project, The", "movie_genre" : "Documentary", "production_year" : 2017, "budget" : 14765 }
+{ "_id" : ObjectId("6228daeab035f886530f1b59"), "movie_name" : "Tough Enough (Knallhart)", "movie_genre" : "Crime|Drama", "production_year" : 1995, "budget" : 11144 }
+{ "_id" : ObjectId("6228daeab035f886530f1b5a"), "movie_name" : "8 Million Ways to Die", "movie_genre" : "Action|Adventure|Crime|Thriller", "production_year" : 2020, "budget" : 10029 }
+{ "_id" : ObjectId("6228daeab035f886530f1b5b"), "movie_name" : "Harmagedon", "movie_genre" : "Action|Drama", "production_year" : 1990, "budget" : 16633 }
+{ "_id" : ObjectId("6228daeab035f886530f1b5c"), "movie_name" : "Welcome to Australia", "movie_genre" : "Documentary", "production_year" : 1990, "budget" : 19039 }
+{ "_id" : ObjectId("6228daeab035f886530f1b5d"), "movie_name" : "What Have They Done to Your Daughters?", "movie_genre" : "Mystery|Romance|Thriller", "production_year" : 2014, "budget" : 13737 }
+{ "_id" : ObjectId("6228daeab035f886530f1b5e"), "movie_name" : "Canyon, The", "movie_genre" : "Thriller", "production_year" : 1991, "budget" : 18917 }
+{ "_id" : ObjectId("6228daeab035f886530f1b5f"), "movie_name" : "Finder's Fee", "movie_genre" : "Drama|Thriller", "production_year" : 2014, "budget" : 13547 }
+{ "_id" : ObjectId("6228daeab035f886530f1b60"), "movie_name" : "Beerfest", "movie_genre" : "Comedy", "production_year" : 2012, "budget" : 11067 }
+{ "_id" : ObjectId("6228daeab035f886530f1b61"), "movie_name" : "Upperworld", "movie_genre" : "Drama", "production_year" : 2002, "budget" : 13506 }
+{ "_id" : ObjectId("6228daeab035f886530f1b62"), "movie_name" : "What Richard Did", "movie_genre" : "Drama", "production_year" : 2012, "budget" : 10405 }
+{ "_id" : ObjectId("6228daeab035f886530f1b63"), "movie_name" : "Losers, The", "movie_genre" : "Action|Adventure|Drama|Mystery|Thriller", "production_year" : 1999, "budget" : 14055 }
+Type "it" for more
+> db.movie.find({budget:{$eq:"15000"}})
+> db.movie.find({budget:{$eq:15000}})
+> db.movie.find({"budget":{$eq:15000}})
+> db.movie.find({budget:{$gte:15000}}).pretty()
+{
+        "_id" : ObjectId("6228daeab035f886530f1b50"),
+        "movie_name" : "Urbanized",
+        "movie_genre" : "Documentary",
+        "production_year" : 1992,
+        "budget" : 19731
+}
+{
+        "_id" : ObjectId("6228daeab035f886530f1b51"),
+        "movie_name" : "Guerrilla: The Taking of Patty Hearst",
+        "movie_genre" : "Documentary",
+        "production_year" : 2018,
+        "budget" : 15226
+}
+{
+        "_id" : ObjectId("6228daeab035f886530f1b52"),
+        "movie_name" : "Glorious Technicolor",
+        "movie_genre" : "Documentary",
+        "production_year" : 2012,
+        "budget" : 19950
+}
+{
+        "_id" : ObjectId("6228daeab035f886530f1b54"),
+        "movie_name" : "Detropia",
+        "movie_genre" : "Documentary",
+        "production_year" : 2018,
+        "budget" : 19680
+}
+{
+        "_id" : ObjectId("6228daeab035f886530f1b5b"),
+        "movie_name" : "Harmagedon",
+        "movie_genre" : "Action|Drama",
+        "production_year" : 1990,
+        "budget" : 16633
+}
+{
+        "_id" : ObjectId("6228daeab035f886530f1b5c"),
+        "movie_name" : "Welcome to Australia",
+        "movie_genre" : "Documentary",
+        "production_year" : 1990,
+        "budget" : 19039
+}
+{
+        "_id" : ObjectId("6228daeab035f886530f1b5e"),
+        "movie_name" : "Canyon, The",
+        "movie_genre" : "Thriller",
+        "production_year" : 1991,
+        "budget" : 18917
+}
+{
+        "_id" : ObjectId("6228daeab035f886530f1b64"),
+        "movie_name" : "The Dust Bowl",
+        "movie_genre" : "Documentary",
+        "production_year" : 1993,
+        "budget" : 17543
+}
+{
+        "_id" : ObjectId("6228daeab035f886530f1b65"),
+        "movie_name" : "Boomerang",
+        "movie_genre" : "Comedy|Romance",
+        "production_year" : 1991,
+        "budget" : 15938
+}
+{
+        "_id" : ObjectId("6228daeab035f886530f1b66"),
+        "movie_name" : "Lives of a Bengal Lancer, The",
+        "movie_genre" : "Adventure|Drama",
+        "production_year" : 2012,
+        "budget" : 19197
+}
+{
+        "_id" : ObjectId("6228daeab035f886530f1b68"),
+        "movie_name" : "Patriot Games",
+        "movie_genre" : "Action|Thriller",
+        "production_year" : 2020,
+        "budget" : 15846
+}
+{
+        "_id" : ObjectId("6228daeab035f886530f1b6a"),
+        "movie_name" : "Disfigured",
+        "movie_genre" : "Drama",
+        "production_year" : 2020,
+        "budget" : 19274
+}
+{
+        "_id" : ObjectId("6228daeab035f886530f1b6b"),
+        "movie_name" : "Last Song, The",
+        "movie_genre" : "Drama|Romance",
+        "production_year" : 1992,
+        "budget" : 19180
+}
+{
+        "_id" : ObjectId("6228daeab035f886530f1b6c"),
+        "movie_name" : "Mephisto",
+        "movie_genre" : "Drama|War",
+        "production_year" : 2019,
+        "budget" : 18803
+}
+{
+        "_id" : ObjectId("6228daeab035f886530f1b6f"),
+        "movie_name" : "Gray Lady Down",
+        "movie_genre" : "Drama|Thriller",
+        "production_year" : 1990,
+        "budget" : 17166
+}
+{
+        "_id" : ObjectId("6228daeab035f886530f1b70"),
+        "movie_name" : "Case départ",
+        "movie_genre" : "Comedy",
+        "production_year" : 2018,
+        "budget" : 16768
+}
+{
+        "_id" : ObjectId("6228daeab035f886530f1b72"),
+        "movie_name" : "Ballistic: Ecks vs. Sever",
+        "movie_genre" : "Action|Thriller",
+        "production_year" : 1995,
+        "budget" : 18630
+}
+{
+        "_id" : ObjectId("6228daeab035f886530f1b73"),
+        "movie_name" : "Life Aquatic with Steve Zissou, The",
+        "movie_genre" : "Adventure|Comedy|Fantasy",
+        "production_year" : 1994,
+        "budget" : 15703
+}
+{
+        "_id" : ObjectId("6228daeab035f886530f1b75"),
+        "movie_name" : "Driven to Kill",
+        "movie_genre" : "Action|Crime|Thriller",
+        "production_year" : 1995,
+        "budget" : 15555
+}
+{
+        "_id" : ObjectId("6228daeab035f886530f1b77"),
+        "movie_name" : "Eye for an Eye, An",
+        "movie_genre" : "Action|Crime|Thriller",
+        "production_year" : 2008,
+        "budget" : 15948
+}
+Type "it" for more
+> db.movie.find({budget:{$lte:15000}}).pretty()
+{
+        "_id" : ObjectId("6228daeab035f886530f1b53"),
+        "movie_name" : "Trip, The",
+        "movie_genre" : "Comedy|Drama|Romance",
+        "production_year" : 2004,
+        "budget" : 9351
+}
+{
+        "_id" : ObjectId("6228daeab035f886530f1b55"),
+        "movie_name" : "Machine Girl, The (Kataude mashin gâru)",
+        "movie_genre" : "Action|Comedy|Fantasy|Horror|Thriller",
+        "production_year" : 2006,
+        "budget" : 10444
+}
+{
+        "_id" : ObjectId("6228daeab035f886530f1b56"),
+        "movie_name" : "Besieged (a.k.a. L' Assedio)",
+        "movie_genre" : "Drama",
+        "production_year" : 1992,
+        "budget" : 9449
+}
+{
+        "_id" : ObjectId("6228daeab035f886530f1b57"),
+        "movie_name" : "Clown",
+        "movie_genre" : "Drama|Horror",
+        "production_year" : 2010,
+        "budget" : 14356
+}
+{
+        "_id" : ObjectId("6228daeab035f886530f1b58"),
+        "movie_name" : "Turandot Project, The",
+        "movie_genre" : "Documentary",
+        "production_year" : 2017,
+        "budget" : 14765
+}
+{
+        "_id" : ObjectId("6228daeab035f886530f1b59"),
+        "movie_name" : "Tough Enough (Knallhart)",
+        "movie_genre" : "Crime|Drama",
+        "production_year" : 1995,
+        "budget" : 11144
+}
+{
+        "_id" : ObjectId("6228daeab035f886530f1b5a"),
+        "movie_name" : "8 Million Ways to Die",
+        "movie_genre" : "Action|Adventure|Crime|Thriller",
+        "production_year" : 2020,
+        "budget" : 10029
+}
+{
+        "_id" : ObjectId("6228daeab035f886530f1b5d"),
+        "movie_name" : "What Have They Done to Your Daughters?",
+        "movie_genre" : "Mystery|Romance|Thriller",
+        "production_year" : 2014,
+        "budget" : 13737
+}
+{
+        "_id" : ObjectId("6228daeab035f886530f1b5f"),
+        "movie_name" : "Finder's Fee",
+        "movie_genre" : "Drama|Thriller",
+        "production_year" : 2014,
+        "budget" : 13547
+}
+{
+        "_id" : ObjectId("6228daeab035f886530f1b60"),
+        "movie_name" : "Beerfest",
+        "movie_genre" : "Comedy",
+        "production_year" : 2012,
+        "budget" : 11067
+}
+{
+        "_id" : ObjectId("6228daeab035f886530f1b61"),
+        "movie_name" : "Upperworld",
+        "movie_genre" : "Drama",
+        "production_year" : 2002,
+        "budget" : 13506
+}
+{
+        "_id" : ObjectId("6228daeab035f886530f1b62"),
+        "movie_name" : "What Richard Did",
+        "movie_genre" : "Drama",
+        "production_year" : 2012,
+        "budget" : 10405
+}
+{
+        "_id" : ObjectId("6228daeab035f886530f1b63"),
+        "movie_name" : "Losers, The",
+        "movie_genre" : "Action|Adventure|Drama|Mystery|Thriller",
+        "production_year" : 1999,
+        "budget" : 14055
+}
+{
+        "_id" : ObjectId("6228daeab035f886530f1b67"),
+        "movie_name" : "LennoNYC",
+        "movie_genre" : "Documentary",
+        "production_year" : 2009,
+        "budget" : 14465
+}
+{
+        "_id" : ObjectId("6228daeab035f886530f1b69"),
+        "movie_name" : "To Mars by A-Bomb: The Secret History of Project Orion",
+        "movie_genre" : "Documentary",
+        "production_year" : 2013,
+        "budget" : 9086
+}
+{
+        "_id" : ObjectId("6228daeab035f886530f1b6d"),
+        "movie_name" : "Taming of the Shrew, The",
+        "movie_genre" : "Comedy",
+        "production_year" : 2018,
+        "budget" : 9285
+}
+{
+        "_id" : ObjectId("6228daeab035f886530f1b6e"),
+        "movie_name" : "Battle for Marjah, The",
+        "movie_genre" : "Documentary|War",
+        "production_year" : 1991,
+        "budget" : 13455
+}
+{
+        "_id" : ObjectId("6228daeab035f886530f1b71"),
+        "movie_name" : "Hell Is for Heroes",
+        "movie_genre" : "Drama|War",
+        "production_year" : 2007,
+        "budget" : 10174
+}
+{
+        "_id" : ObjectId("6228daeab035f886530f1b74"),
+        "movie_name" : "Return to the 36th Chamber (Shao Lin da peng da shi) ",
+        "movie_genre" : "Action|Comedy",
+        "production_year" : 1990,
+        "budget" : 9945
+}
+{
+        "_id" : ObjectId("6228daeab035f886530f1b76"),
+        "movie_name" : "Tomorrow at Dawn (Demain dès l'aube)",
+        "movie_genre" : "Drama",
+        "production_year" : 1996,
+        "budget" : 13357
+}
+Type "it" for more
+> db.movie.find([{budget:{$gt:10000}},{production_year:{$gt:2000}}]).pretty()
+Error: error: {
+        "ok" : 0,
+        "errmsg" : "Expected field filterto be of type object",
+        "code" : 14,
+        "codeName" : "TypeMismatch"
+}
+> db.movie.find([{"budget":{$gt:10000}},{"production_year":{$gt:2000}}]).pretty()
+Error: error: {
+        "ok" : 0,
+        "errmsg" : "Expected field filterto be of type object",
+        "code" : 14,
+        "codeName" : "TypeMismatch"
+}
+> db.movie.findMany([{"budget":{$gt:10000}},{"production_year":{$gt:2000}}]).pretty()
+uncaught exception: TypeError: db.movie.findMany is not a function :
+@(shell):1:1
+> db.movie.findMany({"budget":{$gt:10000}},{"production_year":{$gt:2000}}).pretty()
+uncaught exception: TypeError: db.movie.findMany is not a function :
+@(shell):1:1
+> db.movie.find({"moive_name":{$ne:"movie_name"}})
+{ "_id" : ObjectId("6228daeab035f886530f1b50"), "movie_name" : "Urbanized", "movie_genre" : "Documentary", "production_year" : 1992, "budget" : 19731 }
+{ "_id" : ObjectId("6228daeab035f886530f1b51"), "movie_name" : "Guerrilla: The Taking of Patty Hearst", "movie_genre" : "Documentary", "production_year" : 2018, "budget" : 15226 }
+{ "_id" : ObjectId("6228daeab035f886530f1b52"), "movie_name" : "Glorious Technicolor", "movie_genre" : "Documentary", "production_year" : 2012, "budget" : 19950 }
+{ "_id" : ObjectId("6228daeab035f886530f1b53"), "movie_name" : "Trip, The", "movie_genre" : "Comedy|Drama|Romance", "production_year" : 2004, "budget" : 9351 }
+{ "_id" : ObjectId("6228daeab035f886530f1b54"), "movie_name" : "Detropia", "movie_genre" : "Documentary", "production_year" : 2018, "budget" : 19680 }
+{ "_id" : ObjectId("6228daeab035f886530f1b55"), "movie_name" : "Machine Girl, The (Kataude mashin gâru)", "movie_genre" : "Action|Comedy|Fantasy|Horror|Thriller", "production_year" : 2006, "budget" : 10444 }
+{ "_id" : ObjectId("6228daeab035f886530f1b56"), "movie_name" : "Besieged (a.k.a. L' Assedio)", "movie_genre" : "Drama", "production_year" : 1992, "budget" : 9449 }
+{ "_id" : ObjectId("6228daeab035f886530f1b57"), "movie_name" : "Clown", "movie_genre" : "Drama|Horror", "production_year" : 2010, "budget" : 14356 }
+{ "_id" : ObjectId("6228daeab035f886530f1b58"), "movie_name" : "Turandot Project, The", "movie_genre" : "Documentary", "production_year" : 2017, "budget" : 14765 }
+{ "_id" : ObjectId("6228daeab035f886530f1b59"), "movie_name" : "Tough Enough (Knallhart)", "movie_genre" : "Crime|Drama", "production_year" : 1995, "budget" : 11144 }
+{ "_id" : ObjectId("6228daeab035f886530f1b5a"), "movie_name" : "8 Million Ways to Die", "movie_genre" : "Action|Adventure|Crime|Thriller", "production_year" : 2020, "budget" : 10029 }
+{ "_id" : ObjectId("6228daeab035f886530f1b5b"), "movie_name" : "Harmagedon", "movie_genre" : "Action|Drama", "production_year" : 1990, "budget" : 16633 }
+{ "_id" : ObjectId("6228daeab035f886530f1b5c"), "movie_name" : "Welcome to Australia", "movie_genre" : "Documentary", "production_year" : 1990, "budget" : 19039 }
+{ "_id" : ObjectId("6228daeab035f886530f1b5d"), "movie_name" : "What Have They Done to Your Daughters?", "movie_genre" : "Mystery|Romance|Thriller", "production_year" : 2014, "budget" : 13737 }
+{ "_id" : ObjectId("6228daeab035f886530f1b5e"), "movie_name" : "Canyon, The", "movie_genre" : "Thriller", "production_year" : 1991, "budget" : 18917 }
+{ "_id" : ObjectId("6228daeab035f886530f1b5f"), "movie_name" : "Finder's Fee", "movie_genre" : "Drama|Thriller", "production_year" : 2014, "budget" : 13547 }
+{ "_id" : ObjectId("6228daeab035f886530f1b60"), "movie_name" : "Beerfest", "movie_genre" : "Comedy", "production_year" : 2012, "budget" : 11067 }
+{ "_id" : ObjectId("6228daeab035f886530f1b61"), "movie_name" : "Upperworld", "movie_genre" : "Drama", "production_year" : 2002, "budget" : 13506 }
+{ "_id" : ObjectId("6228daeab035f886530f1b62"), "movie_name" : "What Richard Did", "movie_genre" : "Drama", "production_year" : 2012, "budget" : 10405 }
+{ "_id" : ObjectId("6228daeab035f886530f1b63"), "movie_name" : "Losers, The", "movie_genre" : "Action|Adventure|Drama|Mystery|Thriller", "production_year" : 1999, "budget" : 14055 }
+Type "it" for more
+> db.movie.find({$end:[{"budget":{$gt:10000}},{"production_year":{$gt:2000}}]})
+Error: error: {
+        "ok" : 0,
+        "errmsg" : "unknown top level operator: $end. If you have a field name that starts with a '$' symbol, consider using $getField or $setField.",
+        "code" : 2,
+        "codeName" : "BadValue"
+}
+> db.movie.find({$and:[{"budget":{$gt:10000}},{"production_year":{$gt:2000}}]})
+{ "_id" : ObjectId("6228daeab035f886530f1b51"), "movie_name" : "Guerrilla: The Taking of Patty Hearst", "movie_genre" : "Documentary", "production_year" : 2018, "budget" : 15226 }
+{ "_id" : ObjectId("6228daeab035f886530f1b52"), "movie_name" : "Glorious Technicolor", "movie_genre" : "Documentary", "production_year" : 2012, "budget" : 19950 }
+{ "_id" : ObjectId("6228daeab035f886530f1b54"), "movie_name" : "Detropia", "movie_genre" : "Documentary", "production_year" : 2018, "budget" : 19680 }
+{ "_id" : ObjectId("6228daeab035f886530f1b55"), "movie_name" : "Machine Girl, The (Kataude mashin gâru)", "movie_genre" : "Action|Comedy|Fantasy|Horror|Thriller", "production_year" : 2006, "budget" : 10444 }
+{ "_id" : ObjectId("6228daeab035f886530f1b57"), "movie_name" : "Clown", "movie_genre" : "Drama|Horror", "production_year" : 2010, "budget" : 14356 }
+{ "_id" : ObjectId("6228daeab035f886530f1b58"), "movie_name" : "Turandot Project, The", "movie_genre" : "Documentary", "production_year" : 2017, "budget" : 14765 }
+{ "_id" : ObjectId("6228daeab035f886530f1b5a"), "movie_name" : "8 Million Ways to Die", "movie_genre" : "Action|Adventure|Crime|Thriller", "production_year" : 2020, "budget" : 10029 }
+{ "_id" : ObjectId("6228daeab035f886530f1b5d"), "movie_name" : "What Have They Done to Your Daughters?", "movie_genre" : "Mystery|Romance|Thriller", "production_year" : 2014, "budget" : 13737 }
+{ "_id" : ObjectId("6228daeab035f886530f1b5f"), "movie_name" : "Finder's Fee", "movie_genre" : "Drama|Thriller", "production_year" : 2014, "budget" : 13547 }
+{ "_id" : ObjectId("6228daeab035f886530f1b60"), "movie_name" : "Beerfest", "movie_genre" : "Comedy", "production_year" : 2012, "budget" : 11067 }
+{ "_id" : ObjectId("6228daeab035f886530f1b61"), "movie_name" : "Upperworld", "movie_genre" : "Drama", "production_year" : 2002, "budget" : 13506 }
+{ "_id" : ObjectId("6228daeab035f886530f1b62"), "movie_name" : "What Richard Did", "movie_genre" : "Drama", "production_year" : 2012, "budget" : 10405 }
+{ "_id" : ObjectId("6228daeab035f886530f1b66"), "movie_name" : "Lives of a Bengal Lancer, The", "movie_genre" : "Adventure|Drama", "production_year" : 2012, "budget" : 19197 }
+{ "_id" : ObjectId("6228daeab035f886530f1b67"), "movie_name" : "LennoNYC", "movie_genre" : "Documentary", "production_year" : 2009, "budget" : 14465 }
+{ "_id" : ObjectId("6228daeab035f886530f1b68"), "movie_name" : "Patriot Games", "movie_genre" : "Action|Thriller", "production_year" : 2020, "budget" : 15846 }
+{ "_id" : ObjectId("6228daeab035f886530f1b6a"), "movie_name" : "Disfigured", "movie_genre" : "Drama", "production_year" : 2020, "budget" : 19274 }
+{ "_id" : ObjectId("6228daeab035f886530f1b6c"), "movie_name" : "Mephisto", "movie_genre" : "Drama|War", "production_year" : 2019, "budget" : 18803 }
+{ "_id" : ObjectId("6228daeab035f886530f1b70"), "movie_name" : "Case départ", "movie_genre" : "Comedy", "production_year" : 2018, "budget" : 16768 }
+{ "_id" : ObjectId("6228daeab035f886530f1b71"), "movie_name" : "Hell Is for Heroes", "movie_genre" : "Drama|War", "production_year" : 2007, "budget" : 10174 }
+{ "_id" : ObjectId("6228daeab035f886530f1b77"), "movie_name" : "Eye for an Eye, An", "movie_genre" : "Action|Crime|Thriller", "production_year" : 2008, "budget" : 15948 }
+Type "it" for more
+> db.movie.find({$or:[{"budget":{$gt:10000}},{"production_year":{$gt:2000}}]})
+{ "_id" : ObjectId("6228daeab035f886530f1b50"), "movie_name" : "Urbanized", "movie_genre" : "Documentary", "production_year" : 1992, "budget" : 19731 }
+{ "_id" : ObjectId("6228daeab035f886530f1b51"), "movie_name" : "Guerrilla: The Taking of Patty Hearst", "movie_genre" : "Documentary", "production_year" : 2018, "budget" : 15226 }
+{ "_id" : ObjectId("6228daeab035f886530f1b52"), "movie_name" : "Glorious Technicolor", "movie_genre" : "Documentary", "production_year" : 2012, "budget" : 19950 }
+{ "_id" : ObjectId("6228daeab035f886530f1b53"), "movie_name" : "Trip, The", "movie_genre" : "Comedy|Drama|Romance", "production_year" : 2004, "budget" : 9351 }
+{ "_id" : ObjectId("6228daeab035f886530f1b54"), "movie_name" : "Detropia", "movie_genre" : "Documentary", "production_year" : 2018, "budget" : 19680 }
+{ "_id" : ObjectId("6228daeab035f886530f1b55"), "movie_name" : "Machine Girl, The (Kataude mashin gâru)", "movie_genre" : "Action|Comedy|Fantasy|Horror|Thriller", "production_year" : 2006, "budget" : 10444 }
+{ "_id" : ObjectId("6228daeab035f886530f1b57"), "movie_name" : "Clown", "movie_genre" : "Drama|Horror", "production_year" : 2010, "budget" : 14356 }
+{ "_id" : ObjectId("6228daeab035f886530f1b58"), "movie_name" : "Turandot Project, The", "movie_genre" : "Documentary", "production_year" : 2017, "budget" : 14765 }
+{ "_id" : ObjectId("6228daeab035f886530f1b59"), "movie_name" : "Tough Enough (Knallhart)", "movie_genre" : "Crime|Drama", "production_year" : 1995, "budget" : 11144 }
+{ "_id" : ObjectId("6228daeab035f886530f1b5a"), "movie_name" : "8 Million Ways to Die", "movie_genre" : "Action|Adventure|Crime|Thriller", "production_year" : 2020, "budget" : 10029 }
+{ "_id" : ObjectId("6228daeab035f886530f1b5b"), "movie_name" : "Harmagedon", "movie_genre" : "Action|Drama", "production_year" : 1990, "budget" : 16633 }
+{ "_id" : ObjectId("6228daeab035f886530f1b5c"), "movie_name" : "Welcome to Australia", "movie_genre" : "Documentary", "production_year" : 1990, "budget" : 19039 }
+{ "_id" : ObjectId("6228daeab035f886530f1b5d"), "movie_name" : "What Have They Done to Your Daughters?", "movie_genre" : "Mystery|Romance|Thriller", "production_year" : 2014, "budget" : 13737 }
+{ "_id" : ObjectId("6228daeab035f886530f1b5e"), "movie_name" : "Canyon, The", "movie_genre" : "Thriller", "production_year" : 1991, "budget" : 18917 }
+{ "_id" : ObjectId("6228daeab035f886530f1b5f"), "movie_name" : "Finder's Fee", "movie_genre" : "Drama|Thriller", "production_year" : 2014, "budget" : 13547 }
+{ "_id" : ObjectId("6228daeab035f886530f1b60"), "movie_name" : "Beerfest", "movie_genre" : "Comedy", "production_year" : 2012, "budget" : 11067 }
+{ "_id" : ObjectId("6228daeab035f886530f1b61"), "movie_name" : "Upperworld", "movie_genre" : "Drama", "production_year" : 2002, "budget" : 13506 }
+{ "_id" : ObjectId("6228daeab035f886530f1b62"), "movie_name" : "What Richard Did", "movie_genre" : "Drama", "production_year" : 2012, "budget" : 10405 }
+{ "_id" : ObjectId("6228daeab035f886530f1b63"), "movie_name" : "Losers, The", "movie_genre" : "Action|Adventure|Drama|Mystery|Thriller", "production_year" : 1999, "budget" : 14055 }
+{ "_id" : ObjectId("6228daeab035f886530f1b64"), "movie_name" : "The Dust Bowl", "movie_genre" : "Documentary", "production_year" : 1993, "budget" : 17543 }
+Type "it" for more
+> db.movie.find({$nor:[{"budget":{$gt:10000}},{"production_year":{$gt:2000}}]})
+{ "_id" : ObjectId("6228daeab035f886530f1b56"), "movie_name" : "Besieged (a.k.a. L' Assedio)", "movie_genre" : "Drama", "production_year" : 1992, "budget" : 9449 }
+{ "_id" : ObjectId("6228daeab035f886530f1b74"), "movie_name" : "Return to the 36th Chamber (Shao Lin da peng da shi) ", "movie_genre" : "Action|Comedy", "production_year" : 1990, "budget" : 9945 }
+{ "_id" : ObjectId("6228daeab035f886530f1b86"), "movie_name" : "Other F Word, The", "movie_genre" : "Comedy|Documentary|Drama", "production_year" : 2000, "budget" : 9071 }
+{ "_id" : ObjectId("6228daeab035f886530f1bb7"), "movie_name" : "Living Wake, The", "movie_genre" : "Comedy", "production_year" : 1995, "budget" : 9242 }
+{ "_id" : ObjectId("6228daeab035f886530f1bc6"), "movie_name" : "Disorder", "movie_genre" : "Documentary", "production_year" : 1998, "budget" : 9264 }
+{ "_id" : ObjectId("6228daeab035f886530f1be3"), "movie_name" : "Like Father, Like Son", "movie_genre" : "Comedy", "production_year" : 1993, "budget" : 9413 }
+{ "_id" : ObjectId("6228daeab035f886530f1c0f"), "movie_name" : "Edward, My Son", "movie_genre" : "Drama", "production_year" : 1995, "budget" : 9794 }
+{ "_id" : ObjectId("6228daeab035f886530f1c34"), "movie_name" : "Last Resort (National Lampoon's Last Resort)", "movie_genre" : "Comedy", "production_year" : 1996, "budget" : 9343 }
+{ "_id" : ObjectId("6228daeab035f886530f1c5a"), "movie_name" : "Gainsbourg (Vie Héroïque)", "movie_genre" : "Drama|Musical|Romance", "production_year" : 1996, "budget" : 9816 }
+{ "_id" : ObjectId("6228daeab035f886530f1c71"), "movie_name" : "Hotel Chevalier (Part 1 of 'The Darjeeling Limited')", "movie_genre" : "Drama", "production_year" : 1995, "budget" : 9050 }
+{ "_id" : ObjectId("6228daeab035f886530f1c73"), "movie_name" : "Wonder Man", "movie_genre" : "Comedy|Fantasy|Musical", "production_year" : 1992, "budget" : 9767 }
+{ "_id" : ObjectId("6228daeab035f886530f1cb0"), "movie_name" : "Butterfly", "movie_genre" : "Drama", "production_year" : 1993, "budget" : 9248 }
+{ "_id" : ObjectId("6228daeab035f886530f1cc5"), "movie_name" : "Jamie and Jessie Are Not Together", "movie_genre" : "Comedy|Musical|Romance", "production_year" : 1993, "budget" : 9391 }
+{ "_id" : ObjectId("6228daeab035f886530f1cda"), "movie_name" : "Bad Men of Missouri", "movie_genre" : "Action|Romance|Western", "production_year" : 1993, "budget" : 9195 }
+{ "_id" : ObjectId("6228daeab035f886530f1d0b"), "movie_name" : "To Catch a Thief", "movie_genre" : "Crime|Mystery|Romance|Thriller", "production_year" : 1997, "budget" : 9218 }
+{ "_id" : ObjectId("6228daeab035f886530f1d15"), "movie_name" : "Reclaim Your Brain (Free Rainer)", "movie_genre" : "Comedy|Crime|Drama|Romance", "production_year" : 1999, "budget" : 9266 }
+{ "_id" : ObjectId("6228daeab035f886530f1d20"), "movie_name" : "Net Worth", "movie_genre" : "Drama", "production_year" : 1995, "budget" : 9471 }
+{ "_id" : ObjectId("6228daeab035f886530f1d39"), "movie_name" : "Hart of London, The", "movie_genre" : "Drama", "production_year" : 1993, "budget" : 9048 }
+> db.movie.find({$not:[{"budget":{$eq:10000}},{"production_year":{$eq:2000}}]})
+Error: error: {
+        "ok" : 0,
+        "errmsg" : "unknown top level operator: $not. If you have a field name that starts with a '$' symbol, consider using $getField or $setField.",
+        "code" : 2,
+        "codeName" : "BadValue"
+}
+> db.movie.find($and[{"budget":{$ne:10000}},{"production_year":{$ne:2000}}]})
+uncaught exception: SyntaxError: missing ) after argument list :
+@(shell):1:73
+> db.movie.find({$and:[{"budget":{$ne:10000}},{"production_year":{$ne:2000}}]})
+{ "_id" : ObjectId("6228daeab035f886530f1b50"), "movie_name" : "Urbanized", "movie_genre" : "Documentary", "production_year" : 1992, "budget" : 19731 }
+{ "_id" : ObjectId("6228daeab035f886530f1b51"), "movie_name" : "Guerrilla: The Taking of Patty Hearst", "movie_genre" : "Documentary", "production_year" : 2018, "budget" : 15226 }
+{ "_id" : ObjectId("6228daeab035f886530f1b52"), "movie_name" : "Glorious Technicolor", "movie_genre" : "Documentary", "production_year" : 2012, "budget" : 19950 }
+{ "_id" : ObjectId("6228daeab035f886530f1b53"), "movie_name" : "Trip, The", "movie_genre" : "Comedy|Drama|Romance", "production_year" : 2004, "budget" : 9351 }
+{ "_id" : ObjectId("6228daeab035f886530f1b54"), "movie_name" : "Detropia", "movie_genre" : "Documentary", "production_year" : 2018, "budget" : 19680 }
+{ "_id" : ObjectId("6228daeab035f886530f1b55"), "movie_name" : "Machine Girl, The (Kataude mashin gâru)", "movie_genre" : "Action|Comedy|Fantasy|Horror|Thriller", "production_year" : 2006, "budget" : 10444 }
+{ "_id" : ObjectId("6228daeab035f886530f1b56"), "movie_name" : "Besieged (a.k.a. L' Assedio)", "movie_genre" : "Drama", "production_year" : 1992, "budget" : 9449 }
+{ "_id" : ObjectId("6228daeab035f886530f1b57"), "movie_name" : "Clown", "movie_genre" : "Drama|Horror", "production_year" : 2010, "budget" : 14356 }
+{ "_id" : ObjectId("6228daeab035f886530f1b58"), "movie_name" : "Turandot Project, The", "movie_genre" : "Documentary", "production_year" : 2017, "budget" : 14765 }
+{ "_id" : ObjectId("6228daeab035f886530f1b59"), "movie_name" : "Tough Enough (Knallhart)", "movie_genre" : "Crime|Drama", "production_year" : 1995, "budget" : 11144 }
+{ "_id" : ObjectId("6228daeab035f886530f1b5a"), "movie_name" : "8 Million Ways to Die", "movie_genre" : "Action|Adventure|Crime|Thriller", "production_year" : 2020, "budget" : 10029 }
+{ "_id" : ObjectId("6228daeab035f886530f1b5b"), "movie_name" : "Harmagedon", "movie_genre" : "Action|Drama", "production_year" : 1990, "budget" : 16633 }
+{ "_id" : ObjectId("6228daeab035f886530f1b5c"), "movie_name" : "Welcome to Australia", "movie_genre" : "Documentary", "production_year" : 1990, "budget" : 19039 }
+{ "_id" : ObjectId("6228daeab035f886530f1b5d"), "movie_name" : "What Have They Done to Your Daughters?", "movie_genre" : "Mystery|Romance|Thriller", "production_year" : 2014, "budget" : 13737 }
+{ "_id" : ObjectId("6228daeab035f886530f1b5e"), "movie_name" : "Canyon, The", "movie_genre" : "Thriller", "production_year" : 1991, "budget" : 18917 }
+{ "_id" : ObjectId("6228daeab035f886530f1b5f"), "movie_name" : "Finder's Fee", "movie_genre" : "Drama|Thriller", "production_year" : 2014, "budget" : 13547 }
+{ "_id" : ObjectId("6228daeab035f886530f1b60"), "movie_name" : "Beerfest", "movie_genre" : "Comedy", "production_year" : 2012, "budget" : 11067 }
+{ "_id" : ObjectId("6228daeab035f886530f1b61"), "movie_name" : "Upperworld", "movie_genre" : "Drama", "production_year" : 2002, "budget" : 13506 }
+{ "_id" : ObjectId("6228daeab035f886530f1b62"), "movie_name" : "What Richard Did", "movie_genre" : "Drama", "production_year" : 2012, "budget" : 10405 }
+{ "_id" : ObjectId("6228daeab035f886530f1b63"), "movie_name" : "Losers, The", "movie_genre" : "Action|Adventure|Drama|Mystery|Thriller", "production_year" : 1999, "budget" : 14055 }
+Type "it" for more
+> db.movie.find({$and:[{"budget":{$gte:10000}},{"production_year":{$gte:2000}}]})
+{ "_id" : ObjectId("6228daeab035f886530f1b51"), "movie_name" : "Guerrilla: The Taking of Patty Hearst", "movie_genre" : "Documentary", "production_year" : 2018, "budget" : 15226 }
+{ "_id" : ObjectId("6228daeab035f886530f1b52"), "movie_name" : "Glorious Technicolor", "movie_genre" : "Documentary", "production_year" : 2012, "budget" : 19950 }
+{ "_id" : ObjectId("6228daeab035f886530f1b54"), "movie_name" : "Detropia", "movie_genre" : "Documentary", "production_year" : 2018, "budget" : 19680 }
+{ "_id" : ObjectId("6228daeab035f886530f1b55"), "movie_name" : "Machine Girl, The (Kataude mashin gâru)", "movie_genre" : "Action|Comedy|Fantasy|Horror|Thriller", "production_year" : 2006, "budget" : 10444 }
+{ "_id" : ObjectId("6228daeab035f886530f1b57"), "movie_name" : "Clown", "movie_genre" : "Drama|Horror", "production_year" : 2010, "budget" : 14356 }
+{ "_id" : ObjectId("6228daeab035f886530f1b58"), "movie_name" : "Turandot Project, The", "movie_genre" : "Documentary", "production_year" : 2017, "budget" : 14765 }
+{ "_id" : ObjectId("6228daeab035f886530f1b5a"), "movie_name" : "8 Million Ways to Die", "movie_genre" : "Action|Adventure|Crime|Thriller", "production_year" : 2020, "budget" : 10029 }
+{ "_id" : ObjectId("6228daeab035f886530f1b5d"), "movie_name" : "What Have They Done to Your Daughters?", "movie_genre" : "Mystery|Romance|Thriller", "production_year" : 2014, "budget" : 13737 }
+{ "_id" : ObjectId("6228daeab035f886530f1b5f"), "movie_name" : "Finder's Fee", "movie_genre" : "Drama|Thriller", "production_year" : 2014, "budget" : 13547 }
+{ "_id" : ObjectId("6228daeab035f886530f1b60"), "movie_name" : "Beerfest", "movie_genre" : "Comedy", "production_year" : 2012, "budget" : 11067 }
+{ "_id" : ObjectId("6228daeab035f886530f1b61"), "movie_name" : "Upperworld", "movie_genre" : "Drama", "production_year" : 2002, "budget" : 13506 }
+{ "_id" : ObjectId("6228daeab035f886530f1b62"), "movie_name" : "What Richard Did", "movie_genre" : "Drama", "production_year" : 2012, "budget" : 10405 }
+{ "_id" : ObjectId("6228daeab035f886530f1b66"), "movie_name" : "Lives of a Bengal Lancer, The", "movie_genre" : "Adventure|Drama", "production_year" : 2012, "budget" : 19197 }
+{ "_id" : ObjectId("6228daeab035f886530f1b67"), "movie_name" : "LennoNYC", "movie_genre" : "Documentary", "production_year" : 2009, "budget" : 14465 }
+{ "_id" : ObjectId("6228daeab035f886530f1b68"), "movie_name" : "Patriot Games", "movie_genre" : "Action|Thriller", "production_year" : 2020, "budget" : 15846 }
+{ "_id" : ObjectId("6228daeab035f886530f1b6a"), "movie_name" : "Disfigured", "movie_genre" : "Drama", "production_year" : 2020, "budget" : 19274 }
+{ "_id" : ObjectId("6228daeab035f886530f1b6c"), "movie_name" : "Mephisto", "movie_genre" : "Drama|War", "production_year" : 2019, "budget" : 18803 }
+{ "_id" : ObjectId("6228daeab035f886530f1b70"), "movie_name" : "Case départ", "movie_genre" : "Comedy", "production_year" : 2018, "budget" : 16768 }
+{ "_id" : ObjectId("6228daeab035f886530f1b71"), "movie_name" : "Hell Is for Heroes", "movie_genre" : "Drama|War", "production_year" : 2007, "budget" : 10174 }
+{ "_id" : ObjectId("6228daeab035f886530f1b77"), "movie_name" : "Eye for an Eye, An", "movie_genre" : "Action|Crime|Thriller", "production_year" : 2008, "budget" : 15948 }
+Type "it" for more
+> db.movie.find({$range:[2000,2012,1]})
+Error: error: {
+        "ok" : 0,
+        "errmsg" : "unknown top level operator: $range. If you have a field name that starts with a '$' symbol, consider using $getField or $setField.",
+        "code" : 2,
+        "codeName" : "BadValue"
+}
+> db.movie.find({production_year:{$in:[2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010]}})
+{ "_id" : ObjectId("6228daeab035f886530f1b53"), "movie_name" : "Trip, The", "movie_genre" : "Comedy|Drama|Romance", "production_year" : 2004, "budget" : 9351 }
+{ "_id" : ObjectId("6228daeab035f886530f1b55"), "movie_name" : "Machine Girl, The (Kataude mashin gâru)", "movie_genre" : "Action|Comedy|Fantasy|Horror|Thriller", "production_year" : 2006, "budget" : 10444 }
+{ "_id" : ObjectId("6228daeab035f886530f1b57"), "movie_name" : "Clown", "movie_genre" : "Drama|Horror", "production_year" : 2010, "budget" : 14356 }
+{ "_id" : ObjectId("6228daeab035f886530f1b61"), "movie_name" : "Upperworld", "movie_genre" : "Drama", "production_year" : 2002, "budget" : 13506 }
+{ "_id" : ObjectId("6228daeab035f886530f1b67"), "movie_name" : "LennoNYC", "movie_genre" : "Documentary", "production_year" : 2009, "budget" : 14465 }
+{ "_id" : ObjectId("6228daeab035f886530f1b71"), "movie_name" : "Hell Is for Heroes", "movie_genre" : "Drama|War", "production_year" : 2007, "budget" : 10174 }
+{ "_id" : ObjectId("6228daeab035f886530f1b77"), "movie_name" : "Eye for an Eye, An", "movie_genre" : "Action|Crime|Thriller", "production_year" : 2008, "budget" : 15948 }
+{ "_id" : ObjectId("6228daeab035f886530f1b7a"), "movie_name" : "Pekka ja Pätkä puistotäteinä", "movie_genre" : "Comedy", "production_year" : 2006, "budget" : 19738 }
+{ "_id" : ObjectId("6228daeab035f886530f1b7d"), "movie_name" : "Stand Up and Fight", "movie_genre" : "Drama|Romance|Western", "production_year" : 2003, "budget" : 17560 }
+{ "_id" : ObjectId("6228daeab035f886530f1b7f"), "movie_name" : "Kansas City", "movie_genre" : "Crime|Drama|Musical|Thriller", "production_year" : 2000, "budget" : 18176 }
+{ "_id" : ObjectId("6228daeab035f886530f1b81"), "movie_name" : "Deranged", "movie_genre" : "Horror|Thriller", "production_year" : 2008, "budget" : 17715 }
+{ "_id" : ObjectId("6228daeab035f886530f1b83"), "movie_name" : "We Are Marshall", "movie_genre" : "Drama", "production_year" : 2005, "budget" : 13307 }
+{ "_id" : ObjectId("6228daeab035f886530f1b85"), "movie_name" : "Ida", "movie_genre" : "Drama", "production_year" : 2000, "budget" : 17667 }
+{ "_id" : ObjectId("6228daeab035f886530f1b86"), "movie_name" : "Other F Word, The", "movie_genre" : "Comedy|Documentary|Drama", "production_year" : 2000, "budget" : 9071 }
+{ "_id" : ObjectId("6228daeab035f886530f1b89"), "movie_name" : "Broken Sky (El cielo dividido)", "movie_genre" : "Drama", "production_year" : 2003, "budget" : 10680 }
+{ "_id" : ObjectId("6228daeab035f886530f1b8c"), "movie_name" : "Aaron Loves Angela", "movie_genre" : "Comedy|Drama|Romance|Thriller", "production_year" : 2005, "budget" : 13761 }
+{ "_id" : ObjectId("6228daeab035f886530f1b90"), "movie_name" : "Miss Kicki", "movie_genre" : "Drama", "production_year" : 2001, "budget" : 10332 }
+{ "_id" : ObjectId("6228daeab035f886530f1b91"), "movie_name" : "London Conspiracy", "movie_genre" : "Action|Mystery", "production_year" : 2008, "budget" : 9094 }
+{ "_id" : ObjectId("6228daeab035f886530f1b92"), "movie_name" : "Soldier's Plaything, A", "movie_genre" : "Comedy|Drama|Romance|War", "production_year" : 2005, "budget" : 19452 }
+{ "_id" : ObjectId("6228daeab035f886530f1b96"), "movie_name" : "Story of Xinghua, The (Xinghua san yue tian)", "movie_genre" : "Drama", "production_year" : 2005, "budget" : 19745 }
+Type "it" for more
+> db.movie.find().sort({production_year:-1})
+{ "_id" : ObjectId("6228daeab035f886530f1b5a"), "movie_name" : "8 Million Ways to Die", "movie_genre" : "Action|Adventure|Crime|Thriller", "production_year" : 2020, "budget" : 10029 }
+{ "_id" : ObjectId("6228daeab035f886530f1b68"), "movie_name" : "Patriot Games", "movie_genre" : "Action|Thriller", "production_year" : 2020, "budget" : 15846 }
+{ "_id" : ObjectId("6228daeab035f886530f1b6a"), "movie_name" : "Disfigured", "movie_genre" : "Drama", "production_year" : 2020, "budget" : 19274 }
+{ "_id" : ObjectId("6228daeab035f886530f1ba7"), "movie_name" : "Jonathan Livingston Seagull", "movie_genre" : "Drama", "production_year" : 2020, "budget" : 14678 }
+{ "_id" : ObjectId("6228daeab035f886530f1bd9"), "movie_name" : "Stay Hungry", "movie_genre" : "Comedy|Drama", "production_year" : 2020, "budget" : 17680 }
+{ "_id" : ObjectId("6228daeab035f886530f1be9"), "movie_name" : "Talhotblond:", "movie_genre" : "Documentary|Thriller", "production_year" : 2020, "budget" : 10508 }
+{ "_id" : ObjectId("6228daeab035f886530f1beb"), "movie_name" : "Fast & Furious (Fast and the Furious 4, The)", "movie_genre" : "Action|Crime|Drama|Thriller", "production_year" : 2020, "budget" : 10566 }
+{ "_id" : ObjectId("6228daeab035f886530f1bfc"), "movie_name" : "Song of Ceylon, The", "movie_genre" : "Documentary", "production_year" : 2020, "budget" : 12232 }
+{ "_id" : ObjectId("6228daeab035f886530f1c06"), "movie_name" : "3rd World Hero (Bayaning Third World)", "movie_genre" : "Drama", "production_year" : 2020, "budget" : 12794 }
+{ "_id" : ObjectId("6228daeab035f886530f1c26"), "movie_name" : "Chinese Ghost Story, A (Sinnui yauwan)", "movie_genre" : "Action|Fantasy|Horror|Romance", "production_year" : 2020, "budget" : 15239 }
+{ "_id" : ObjectId("6228daeab035f886530f1c3f"), "movie_name" : "Velvet Goldmine", "movie_genre" : "Drama", "production_year" : 2020, "budget" : 12399 }
+{ "_id" : ObjectId("6228daeab035f886530f1c6f"), "movie_name" : "Chronicles (Crónicas)", "movie_genre" : "Crime|Drama", "production_year" : 2020, "budget" : 11634 }
+{ "_id" : ObjectId("6228daeab035f886530f1c79"), "movie_name" : "Quiz Show", "movie_genre" : "Drama", "production_year" : 2020, "budget" : 16203 }
+{ "_id" : ObjectId("6228daeab035f886530f1c8e"), "movie_name" : "Nightmare Before Christmas, The", "movie_genre" : "Animation|Children|Fantasy|Musical", "production_year" : 2020, "budget" : 17593 }
+{ "_id" : ObjectId("6228daeab035f886530f1c95"), "movie_name" : "Incredibly Strange Creatures Who Stopped Living and Became Mixed-Up Zombies!!?, The", "movie_genre" : "Horror|Mystery", "production_year" : 2020, "budget" : 9444 }
+{ "_id" : ObjectId("6228daeab035f886530f1cc1"), "movie_name" : "One Body Too Many", "movie_genre" : "Comedy|Horror|Mystery", "production_year" : 2020, "budget" : 9928 }
+{ "_id" : ObjectId("6228daeab035f886530f1cdc"), "movie_name" : "I Love You, I Love You (Je t'aime je t'aime)", "movie_genre" : "Drama|Sci-Fi", "production_year" : 2020, "budget" : 16145 }
+{ "_id" : ObjectId("6228daeab035f886530f1ce5"), "movie_name" : "The Baby Maker", "movie_genre" : "Drama", "production_year" : 2020, "budget" : 10744 }
+{ "_id" : ObjectId("6228daeab035f886530f1d27"), "movie_name" : "Dark Touch", "movie_genre" : "Horror", "production_year" : 2020, "budget" : 12447 }
+{ "_id" : ObjectId("6228daeab035f886530f1d3f"), "movie_name" : "The Six Million Dollar Man", "movie_genre" : "Adventure|Sci-Fi", "production_year" : 2020, "budget" : 10393 }
+Type "it" for more
+> db.movie.find().skip(10)
+{ "_id" : ObjectId("6228daeab035f886530f1b5a"), "movie_name" : "8 Million Ways to Die", "movie_genre" : "Action|Adventure|Crime|Thriller", "production_year" : 2020, "budget" : 10029 }
+{ "_id" : ObjectId("6228daeab035f886530f1b5b"), "movie_name" : "Harmagedon", "movie_genre" : "Action|Drama", "production_year" : 1990, "budget" : 16633 }
+{ "_id" : ObjectId("6228daeab035f886530f1b5c"), "movie_name" : "Welcome to Australia", "movie_genre" : "Documentary", "production_year" : 1990, "budget" : 19039 }
+{ "_id" : ObjectId("6228daeab035f886530f1b5d"), "movie_name" : "What Have They Done to Your Daughters?", "movie_genre" : "Mystery|Romance|Thriller", "production_year" : 2014, "budget" : 13737 }
+{ "_id" : ObjectId("6228daeab035f886530f1b5e"), "movie_name" : "Canyon, The", "movie_genre" : "Thriller", "production_year" : 1991, "budget" : 18917 }
+{ "_id" : ObjectId("6228daeab035f886530f1b5f"), "movie_name" : "Finder's Fee", "movie_genre" : "Drama|Thriller", "production_year" : 2014, "budget" : 13547 }
+{ "_id" : ObjectId("6228daeab035f886530f1b60"), "movie_name" : "Beerfest", "movie_genre" : "Comedy", "production_year" : 2012, "budget" : 11067 }
+{ "_id" : ObjectId("6228daeab035f886530f1b61"), "movie_name" : "Upperworld", "movie_genre" : "Drama", "production_year" : 2002, "budget" : 13506 }
+{ "_id" : ObjectId("6228daeab035f886530f1b62"), "movie_name" : "What Richard Did", "movie_genre" : "Drama", "production_year" : 2012, "budget" : 10405 }
+{ "_id" : ObjectId("6228daeab035f886530f1b63"), "movie_name" : "Losers, The", "movie_genre" : "Action|Adventure|Drama|Mystery|Thriller", "production_year" : 1999, "budget" : 14055 }
+{ "_id" : ObjectId("6228daeab035f886530f1b64"), "movie_name" : "The Dust Bowl", "movie_genre" : "Documentary", "production_year" : 1993, "budget" : 17543 }
+{ "_id" : ObjectId("6228daeab035f886530f1b65"), "movie_name" : "Boomerang", "movie_genre" : "Comedy|Romance", "production_year" : 1991, "budget" : 15938 }
+{ "_id" : ObjectId("6228daeab035f886530f1b66"), "movie_name" : "Lives of a Bengal Lancer, The", "movie_genre" : "Adventure|Drama", "production_year" : 2012, "budget" : 19197 }
+{ "_id" : ObjectId("6228daeab035f886530f1b67"), "movie_name" : "LennoNYC", "movie_genre" : "Documentary", "production_year" : 2009, "budget" : 14465 }
+{ "_id" : ObjectId("6228daeab035f886530f1b68"), "movie_name" : "Patriot Games", "movie_genre" : "Action|Thriller", "production_year" : 2020, "budget" : 15846 }
+{ "_id" : ObjectId("6228daeab035f886530f1b69"), "movie_name" : "To Mars by A-Bomb: The Secret History of Project Orion", "movie_genre" : "Documentary", "production_year" : 2013, "budget" : 9086 }
+{ "_id" : ObjectId("6228daeab035f886530f1b6a"), "movie_name" : "Disfigured", "movie_genre" : "Drama", "production_year" : 2020, "budget" : 19274 }
+{ "_id" : ObjectId("6228daeab035f886530f1b6b"), "movie_name" : "Last Song, The", "movie_genre" : "Drama|Romance", "production_year" : 1992, "budget" : 19180 }
+{ "_id" : ObjectId("6228daeab035f886530f1b6c"), "movie_name" : "Mephisto", "movie_genre" : "Drama|War", "production_year" : 2019, "budget" : 18803 }
+{ "_id" : ObjectId("6228daeab035f886530f1b6d"), "movie_name" : "Taming of the Shrew, The", "movie_genre" : "Comedy", "production_year" : 2018, "budget" : 9285 }
+Type "it" for more
+
+> db.movie.findOne()
+{
+        "_id" : ObjectId("6228daeab035f886530f1b50"),
+        "movie_name" : "Urbanized",
+        "movie_genre" : "Documentary",
+        "production_year" : 1992,
+        "budget" : 19731
+}
